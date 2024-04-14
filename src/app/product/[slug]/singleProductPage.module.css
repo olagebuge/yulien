@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  gap: 30px;
+}
+.imgContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.productTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;  
+  gap:15px;
+  margin-top: 60px;
+}
+
+.tagPools{
+  display: flex;
+  gap:10px;
+  margin-top: 30px;
+}
+
+.cateTag{
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.variables{
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+}
+
+.bottomBlock{
+  border-top: 1px dashed gray;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 5px;
+}

@@ -1,0 +1,36 @@
+.container{
+  display: flex;
+  flex-direction: column;  
+  gap:15px;
+  width: 90%;
+  justify-content: space-between;
+  border-left: 1px solid gray;
+  padding-left: 20px;
+}
+.checkOutline{
+  border: 3px solid red;
+}
+.cancelIcon{
+  position: absolute;
+  background-color: black;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.flexBox{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.flexBox h3{
+  min-width: 100px;
+}
+.flexBox span{
+  min-width: 85px;  
+}
+
+.selectImages{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+}

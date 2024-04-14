@@ -1,0 +1,19 @@
+.flexContainer {
+  display: flex;
+  gap: 50px;  
+  min-height:70dvh;
+}
+
+.imgContainer {  
+  position: relative;
+  flex: 3;
+}
+
+.img{
+  object-fit: cover;
+}
+
+
+
+
+

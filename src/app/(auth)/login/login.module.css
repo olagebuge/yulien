@@ -1,0 +1,64 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper{
+  width: 500px;
+  background-color: var(--bgSoft);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+  border-radius: 5px;
+}
+.fastLoginWords{
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+  color: rgb(156, 156, 156);
+}
+.fastLoginWords::before, .fastLoginWords::after{
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: rgb(121, 121, 121);
+  height: 0.8px;
+  width: 100px;
+  top:50%;
+}
+.fastLoginWords::after{
+  right: 0;
+}
+
+.iconContainer{
+  display: flex;
+  justify-content: center;
+  gap:15px;
+  margin-top: 15px;
+}
+
+.iconContainer button{
+  height: 45px;
+  width: 45px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.github{
+  width: 100%;
+  padding: 8px;  
+  background-color: #fff;
+}
+
+.google{
+  width: 100%;
+  padding: 10px;  
+  background-color: #000;
+}
+
+
+

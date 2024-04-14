@@ -1,0 +1,53 @@
+.mathIcon{
+    padding: 3px 5px;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: brown;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+}
+.mathIcon.right{
+    border-radius: 0px 5px 5px 0px;
+}
+
+.formContainer{
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+    justify-content: flex-end;
+    gap:15px;
+}
+
+.formContainer  label{
+    display: flex;   
+}
+.formContainer input[type=number]{
+    padding: 3px 5px;
+    line-height: 20px;
+    width: 50px;   
+}
+
+.formContainer input::-webkit-outer-spin-button,
+.formContainer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.formContainer input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.formContainer button{
+    background-color: var(--btn);
+    border: none;
+    color:#fff;
+    font-size: 16px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}

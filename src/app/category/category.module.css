@@ -1,0 +1,83 @@
+.hContainer{
+    display: flex;
+    gap:60px;
+}
+
+.hContainer>div:first-child{
+    width: 50%;
+}
+.hContainer>div h2{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+
+.tagPools{    
+   margin-top: 20px;
+   list-style: none;
+    
+}
+.tag{
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:8px;
+    font-weight: 600;
+    border-bottom: 1px dashed gray;
+}
+
+.tagTitle{
+    cursor: pointer;
+    padding: 3px 12px;
+    font-size: 1.1rem;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+.edit{
+    background-color: rgb(255, 255, 255);
+    color:var(--bg);    
+    padding: 5px 12px;
+    border-radius: 5px;    
+    font-size: 14px;    
+    cursor: pointer;
+}
+.delete{
+    background-color: rgb(175, 52, 48);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border:none;
+    color:#fff;
+}
+.flexBox{
+    display: flex;
+    gap:12px;
+}
+
+.slug{
+    font-weight: 400;
+    color: gray;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.imageContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgSoft);
+    font-size: 14px;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+}
+.imageContainer img{
+    border-radius: 5px;
+}

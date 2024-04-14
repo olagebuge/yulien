@@ -1,0 +1,43 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    flex: 2;  
+  }
+
+
+.formContainer label{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+  }
+  
+  .formContainer input{
+    padding: 15px 20px;
+    background-color: var(--bgSoft);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    width: 100%;
+  }
+  
+  .formContainer button{
+    border-radius: 5px;
+    border: none;
+    padding: 12px 25px;
+    color: #fff;
+    font-weight: 600;
+    background-color: var(--btn);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .tips{
+  font-size: 0.9rem;
+  display: block;  
+  color: gray;
+  margin-top: 5px;
+}

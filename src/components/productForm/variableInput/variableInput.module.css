@@ -1,0 +1,19 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.cancelIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 3px 15px;
+    line-height: 25px;
+    border-radius: 25px;
+  }
+  .cancelIcon:hover{
+    background-color: orange;
+    color: var(--bg);
+  }

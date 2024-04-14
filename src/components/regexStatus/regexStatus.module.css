@@ -1,0 +1,35 @@
+.metion{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    justify-content: flex-end;
+    color:#c9c9c9;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    margin-top: -15px;
+  }
+  
+  .successStatus{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    justify-content: flex-end;
+    color: rgb(52, 226, 52);
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    margin-top: -15px;
+  }
+  
+  .errorStatus {
+    display: flex;
+    align-items: center;
+    gap:5px;
+    justify-content: flex-end;
+    color: rgb(226, 92, 38);
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    margin-top: -15px;
+  }

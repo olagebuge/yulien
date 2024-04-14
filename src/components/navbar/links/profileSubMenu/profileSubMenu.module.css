@@ -1,0 +1,92 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-left: 20px;
+}
+.overlay{ 
+  position: fixed;
+  width: 100%;
+  height: 100dvh;  
+  left: 0;
+  top:0;  
+}
+
+.avatarContainer {
+  position: relative;
+  width: 36px;
+  height: 36px;  
+}
+
+.avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.subBox {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px 20px ;
+  gap:10px;
+  margin-top: 60px;
+  border-radius: 5px;
+  font-size: 14px;
+  color:var(--bg);
+  font-weight: 700; 
+  text-align: center; 
+}
+.subBox::before{
+  content:"▲";
+  position: absolute;
+  z-index: 999;
+  top:-20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  color: #fff;
+}
+
+.logout{
+  background-color: #fff;
+  color:var(--bg);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+
+.subTitle{
+  font-size: 12px;
+  font-weight: 400;
+  margin: 6px 0px 3px;
+  color:rgb(145, 147, 153);
+  width: 100px;
+  position: relative;
+}
+.subTitle span{
+  background-color: #fff;
+  position: absolute;  
+  top:-8px;
+  right: 0px;
+}
+
+.subTitle:last-child{
+  margin: 0px;
+}
+
+.subBox button{
+  background-color: var(--bg);
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;    
+}
+
+.subBox form{
+  align-self: center;
+}

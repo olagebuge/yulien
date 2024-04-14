@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    min-height: 100dvh;    
+    gap:80px;
+    margin: 30px auto;
+}
+
+
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+  }
+
+  .leftList{
+    list-style: none;
+    border-right: 1px solid #535353;
+    padding-top: 50px;
+    padding-right:30px;
+  }
+  .leftList li{
+    padding: 10px 60px 10px 20px;
+    margin:10px 0px;
+  }
+  .leftList li:hover{
+    background-color: var(--bgSoft);
+    border-radius: 5px;
+  }
+  .leftList li.active{
+    background-color: var(--bgSoft);
+    border-radius: 5px;
+  }
+
+  .details{
+    display: flex;
+    align-items: center;
+    gap:10px;
+   
+  }
+
+  .formContainer h2{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+  
+  .formContainer input,  
+  .formContainer select {
+    padding: 10px;
+    background-color: var(--bgSoft);
+    border: none;
+    border-radius: 5px;
+    color: var(--textColor);
+    width: 100%;
+  }
+  .formContainer label{
+    width: 45px;
+  }
+  
+  .formContainer button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(59, 100, 59);
+    border: none;
+    border-radius: 5px;
+    color: var(--textColor);
+    font-weight: bold;
+  }
+
+  

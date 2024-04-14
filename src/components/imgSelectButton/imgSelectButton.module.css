@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  align-items: center;
+  gap:15px;
+  width: 90%;
+  justify-content: space-between;
+}
+.checkOutline{
+  border: 3px solid red;
+}
+.cancelIcon{
+  position: absolute;
+  background-color: black;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}

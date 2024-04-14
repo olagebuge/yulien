@@ -1,0 +1,37 @@
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .container h1{
+    display: flex;
+    align-items: center;
+    gap:15px;
+  }
+  
+  .mediaHelp{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .mediaBlock{
+    display: flex;
+    flex-direction: column;  
+  }
+  .mediaBlock>div, .mediaBlock>form{
+    width: 100%;
+  }
+.tabsTitle{
+    display: flex;
+    gap:30px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--btn);
+  }
+  .tabsTitle a{
+    font-size: 18px;
+    font-weight: 400;
+    color:gray;
+    cursor: pointer;
+  }

@@ -1,0 +1,87 @@
+.container {
+  flex-direction: column;  
+  min-height: calc(100dvh - 220px);
+}
+
+.textContainer {  
+  display: flex;
+  margin-left: 50px;
+  gap: 10px;
+}
+
+.kvContainer{
+  position: relative;
+  width: 320px;
+  height: 360px;
+  margin-left: 70px;  
+}
+
+.w500{
+  max-width: 500px;
+  width: 100%;  
+}
+
+.boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -220px;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imgContainer {  
+  position: relative;
+  width: 340px;
+  height: 400px;
+}
+
+.img{
+  position: absolute; 
+  bottom: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.box p{
+  background: url('../../../public/about_item_bg.svg') center center no-repeat ;
+  background-size: contain;
+  font-family: 'Noto Sans TC';
+  letter-spacing: 5px;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  color:#fff;
+  position: relative;
+  margin-top: -80px;
+}
+
+.btnBG{
+  background: url('../../../public/arr_button_bg.svg') bottom center no-repeat;
+  background-size: contain;
+  padding: 20px;
+  font-size: 30px;
+  color:var(--bgDeep);
+  letter-spacing: 4px;
+  font-family: 'Noto Sans TC';
+  width: 300px;
+}
+.btnBG img{
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .boxes{
+    flex-direction: column;
+    gap: 50px;
+  }
+}
