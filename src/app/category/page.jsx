@@ -12,8 +12,8 @@ const CategoryPage = async () => {
   const categories = await getCategory();
 
   return (
-    <div>
-      <h1 className="alignTitle">
+    <div className={`container ${styles.container}`}>
+      <h1 className={`alignTitle ${styles.h1Title}`}>
         <FaList />
         類別管理
       </h1>

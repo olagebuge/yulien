@@ -12,10 +12,11 @@
 .container textarea,
 .container select {
   padding: 20px;
-  background-color: var(--bgSoft);
+  background-color: #E2D9CB;
   border: none;
   border-radius: 5px;
   color: var(--textColor);
+  font-size: 16px;
 }
 .container input{
   width: 80%;
@@ -24,10 +25,12 @@
 .container button {
   padding: 20px;
   cursor: pointer;
-  background-color: var(--btn);
+  background-color: var(--bgDeep);
   border: none;
   border-radius: 5px;
-  color: var(--textColor);
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
   font-weight: bold;
 }
 
@@ -66,7 +69,7 @@
   padding: 50px;
   width:240px;
   height: 180px;
-  border: 5px solid #fff;
+  border: 5px solid var(--bgDeep);
   border-radius: 5px;
   cursor: pointer;
 }

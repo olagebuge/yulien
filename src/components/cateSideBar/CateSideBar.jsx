@@ -22,48 +22,55 @@ const CateSideBar = ({ cate, initialProducts }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <div>
         <h3 className={styles.h3Title}>類別</h3>
         <div className={styles.sideCates}>
           <div
-            className={!selectCate && styles.active}
+            className={!selectCate ? styles.active : ""}
             onClick={() => onSelectCate(null)}
           >
             全部
           </div>
-          {cate?.length ?
-            cate.map((c) => (
-              <div
-                onClick={() => onSelectCate(c.title)}
-                className={selectCate === c.title && styles.active}
-              >
-                {c.title}
-              </div>
-            )):""}
-            <div
-            className={selectCate === "未分類" && styles.active}
+          {cate?.length
+            ? cate.map((c) => (
+                <div
+                  onClick={() => onSelectCate(c.title)}
+                  className={selectCate === c.title ? styles.active : ""}
+                  key={c._id}
+                >
+                  {c.title}
+                </div>
+              ))
+            : ""}
+          <div
+            className={selectCate === "未分類" ? styles.active : ""}
             onClick={() => onSelectCate("未分類")}
           >
             未分類
           </div>
         </div>
       </div>
-      <div className={styles.productBlock}>
-        {products.map((product) => (
-          <Link
-            href={`/product/${product.slug}`}
-            className={styles.productContainer}
-            key={product.id}
-          >
-            <div className={styles.imgContainer}>
-              <Image src={product.img} fill alt={"這我還想不到該怎麼辦"} />
-            </div>
-            <h3>{product.title}</h3>
-            <span>NT.{product.variables[0]?.price}元</span>
-          </Link>
-        ))}
-      </div>
+
+      <section className = {styles.container2}>        
+        {selectCate ? <h3 className={styles.h3Title2}>{selectCate}</h3> : <h3 className={styles.h3Title2}>全部</h3>}
+        <div className={styles.productBlock}>
+          {products.map((product) => (
+            <Link
+              href={`/product/${product.slug}`}
+              className={styles.productContainer}
+              key={product._id}
+            >
+              <div className={styles.imgContainer}>
+                <Image src={product.img} fill alt={"這我還想不到該怎麼辦"} />
+              </div>
+              <h3>{product.title}</h3>
+              <span>NT.{product.variables[0]?.price}元</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 };

@@ -33,14 +33,15 @@ a {
 
 .container {
   max-width: 1480px;
-  width: 100%;  
-  margin: auto;
-  padding: 100px 50px 150px;
+  width: 100%;    
+  padding: 100px 30px 150px;
   display: flex;
   gap: 64px;
   align-items: center;  
-  justify-content: center;
+  justify-content: center;  
+  margin: 0 auto;
 }
+
 
 .alignTitle {
   display: flex;
@@ -53,6 +54,7 @@ a {
 .formContiner {
   display: flex;
   flex-direction: column;
+  padding-top: 30px;
   gap: 20px;
 }
 
@@ -68,20 +70,22 @@ a {
 .formContiner textarea,
 .formContiner select {
   padding: 15px;
-  background-color: var(--bgSoft);
+  background-color: #E2D9CB;
   border: none;
   border-radius: 5px;  
-  color: var(--textColor);
+  color: var(--text);
   min-width:90%;
 }
 
 .formContiner button {
   padding: 10px 25px;
   cursor: pointer;
-  background-color: var(--btn);
+  background-color: var(--bgDeep);
   border: none;
   border-radius: 5px;
-  color: var(--textColor);
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 3px;
   font-weight: bold;
 }
 
@@ -89,14 +93,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .lineButton{
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fff;
+  border: 1px solid var(--bgDeep);
+  color: var(--bgDeep);
   gap: 5px;
   border-radius: 5px;
   padding: 8px 25px;
@@ -107,7 +112,7 @@ a {
   padding: 8px 25px;
   font-size: 14px;
   cursor: pointer;
-  background-color: var(--btn);
+  background-color: var(--bgDeep);
   color: #fff;
   border-radius: 5px;
   align-self: flex-start;
@@ -119,20 +124,28 @@ a {
   height: 120px;
 }
 
+.iconContainer{
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
 .errorStatus {
   padding: 10px 25px;
   letter-spacing: 0.5px;
   font-weight: 500;
   border-radius: 5px;
   color: rgb(226, 92, 38);
+  border: 1.5px solid rgb(226, 92, 38);
 }
 
 .successStatus {
   padding: 10px 25px;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   font-weight: 500;
   border-radius: 5px;
-  color: rgb(52, 226, 52);
+  color: rgb(39, 184, 39);
+  border: 1.5px solid rgb(39, 184, 39);
 }
 
 .tips {
@@ -141,9 +154,6 @@ a {
   letter-spacing: 0.2px;
   font-weight: 600;
 }
-
-
-
 
 .overlay {
   width: 100%;
@@ -159,10 +169,13 @@ a {
 }
 
 .modal{
-  width:60%;
+  display: flex;
+  flex-direction: column;  
+  width:70%;
   height: 80%;
+  max-height: 800px;
   background-color: #fff;
-  color: var(--bg);
+  color: var(--text);
   border-radius: 5px;
   padding: 5px;
 }
@@ -191,8 +204,9 @@ a {
 }
 
 .flexBox{
-  display: flex;
+  display: flex;  
   flex-wrap: wrap;
+  justify-content: center;
   gap:10px;
 }
 .alignBox{
@@ -207,6 +221,7 @@ a {
   background-color: #D9BE8A !important;
 }
 
+
 .h2Title{
   font-size: 48px;
   margin-bottom: 50px;
@@ -214,7 +229,7 @@ a {
   font-family: 'Noto Sans TC';
   font-weight: 500;
   display: flex;
-  align-items: center;
+  align-items: center;  
   gap:20px;
 }
 
@@ -239,48 +254,44 @@ a {
   margin: 30px 0px;
   padding-left: 10px;
   font-family: 'Noto Sans TC';
+  width: 450px;
+  z-index: 5;
 }
 
-@media (max-width: 1536px) {
+
+@media screen and (max-width: 1024px) {
   .container {
-    width: 1366px;
+    width: 90%;
+    flex-direction: column;
+    padding-top: 20px;    
+  }
+  .h1Title{
+    width: 100%;
+    text-align: left;
+  }
+  .subtitle{
+    width: 100%;
+    text-align: left;
   }
 }
 
-@media (max-width: 1366px) {
+@media screen and (max-width: 768px) {
   .container {
-    width: 1280px;
+    padding:0px;    
+    gap:20px;
   }
-}
-
-@media (max-width: 1280px) {
-  .container {
-    width: 1024px;
-    padding-left: 20px;
-    padding-right: 20px;
+  .desc{
+    width: 100%;
+    padding: 15px;
+    line-height: 30px; 
+    letter-spacing: 0px;
+    display: flex;    
+    justify-content: center; 
   }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    width: 768px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: 640px;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    width: 475px;
-  }
-}
-
-@media (max-width: 475px) {
-  .container {
-    width: 380px;
+  
+  .h1Title{
+    width: 100%;
+    font-size: 54px;
+    letter-spacing: 3px;
   }
 }

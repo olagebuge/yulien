@@ -14,7 +14,7 @@ const ProductForm = async ({ userId, media, cate, product }) => {
     product ? editProduct : addProduct,
     undefined
   );
-
+ 
   return (
     <div>
       <form action={formAction} className={styles.container}>

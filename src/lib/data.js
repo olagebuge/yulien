@@ -98,6 +98,19 @@ export const getUserMedias = async (id) => {
   }
 };
 
+export const getMedias = async () => {
+  noStore();
+  try {
+    connectToDb();
+    const medias = await Media.find();
+
+    return medias;
+  } catch (err) {
+    console.log(err);
+    throw new Error("找不到這個媒體");
+  }
+};
+
 export const getMedia = async (id) => {
   noStore();
   try {

@@ -1,40 +1,61 @@
 .container {
-  display: flex;  
+  display: flex;
+  min-height: calc(100dvh - 200px);
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 30px;
 }
+
+.container2{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap:20px;
+}
+
 
 .h3Title{
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--bgDeep);
   text-align: center;
+  font-family: 'Noto Sans TC';
+}
+
+.h3Title2{  
+  padding: 10px 20px;
+  background-color: var(--textBrown);
+  color:#fff;
+  width: 120px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .sideCates {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  gap: 8px;
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
 }
 
 .sideCates div {
-    cursor: pointer;
-    padding: 5px;
-    text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
 }
 
 .sideCates div:hover {
-    background-color: #fff;
-    color: var(--bg);
-    border-radius: 5px;
-    font-weight: 600;
+  background-color: var(--bgDeep);
+  color: var(--bg);
+  border-radius: 5px;    
 }
 
 .sideCates div.active {
-    background-color: #fff;
-    color: var(--bg);
-    border-radius: 5px;
-    font-weight: 600;
+  background-color: var(--bgDeep);
+  color: var(--bg);
+  border-radius: 5px;    
 }
 .productBlock{
   display: flex;
@@ -49,7 +70,7 @@
   padding: 6px;
 }
 .productContainer:hover{
-  border: 1px solid greenyellow;
+  background-color: #fff;
   border-radius: 5px;
 }
 .productContainer:hover .imgContainer img{

@@ -55,7 +55,7 @@ const MultiImgSelect = ({ btnText, desText, media, photos }) => {
             </span>
             <div className="alignBox">
               <p>{desText}</p>
-              <div className="flexBox">
+              <div className={`flexBox ${styles.innerBox}`}>
                 {media?.length ? (
                   media.map((m) => (
                     <div

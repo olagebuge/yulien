@@ -1,5 +1,5 @@
 import ProductForm from "@/components/productForm/ProductForm";
-import { getUserMedias,getCategory } from "@/lib/data";
+import { getMedias,getCategory } from "@/lib/data";
 import { FaFilePen } from "react-icons/fa6";
 import styles from "./singleProductEdit.module.css"
 
@@ -16,12 +16,12 @@ const getData = async (slug) => {
 const SingleProductEditpage = async ({ params }) => {
   const { slug } = await params;
   const product = await getData(slug);
-  const media = await getUserMedias(product.userId)
+  const media = await getMedias()
   const cate = await getCategory();
  
 
   return (
-  <div>
+  <div className={`container ${styles.container}`}>
     <h1 className="alignTitle"><FaFilePen />產品編輯頁面</h1>
     <ProductForm userId={product.userId} media={media} cate={cate} product={product}/>
   </div>)

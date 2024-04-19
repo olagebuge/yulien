@@ -26,7 +26,7 @@ const EditMediaForm = ({media}) => {
       <label>
         <h3>
           描述(alt)
-          <span className={styles.tips}>輸入相應的圖片描述有助於SEO。</span>
+          <span className={styles.tips}>輸入相應的圖片描述有助於SEO</span>
         </h3>
         <input type="text" name="alt" defaultValue={media?.alt} />
       </label>

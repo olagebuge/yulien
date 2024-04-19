@@ -18,12 +18,12 @@ const SliderShow = ({ img, photos }) => {
         spaceBetween={60}        
       >
         <SwiperSlide className={styles.swiperContainer}>
-          <Image src={img} fill alt="" />
+          <Image src={img} fill alt="幻燈片圖片" />
         </SwiperSlide>
         {photos[0] !== "" &&
           photos.map((photo) => (
-            <SwiperSlide className={styles.swiperContainer}>
-              <Image src={photo} fill alt="" />
+            <SwiperSlide className={styles.swiperContainer} key={photo}>
+              <Image src={photo} fill alt="幻燈片圖片" />
             </SwiperSlide>
           ))}
       </Swiper>

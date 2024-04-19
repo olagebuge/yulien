@@ -1,10 +1,16 @@
 .cateTag{
     padding: 5px 10px;
-    border: 1px solid #fff;
+    border: 1px solid var(--bgDeep);
     border-radius: 5px;
+    color:  var(--bgDeep)
   }
-  .cateTag.active{
-    border:2px solid greenyellow;
+  .cateTag.active{    
+    background-color: var(--bgDeep);
+    color: #fff;
+  }
+
+  .cateTag.active::before{
+    content:'✔';
   }
   
   .tagBox{
@@ -24,8 +30,8 @@
 
   .addnow{
     padding: 8px 15px;
-    color: #fff;
-    border: 1px solid #fff;
+    color:  var(--bgDeep);
+    border: 1px solid  var(--bgDeep);
     border-radius: 5px;
     cursor: pointer;
   }

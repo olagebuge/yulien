@@ -56,7 +56,7 @@ const UploadAvatar = async ({ image, id }) => {
           <div className={styles.imgContainer}>            
             <Image src={showAvatar} alt="新的頭像" fill className={styles.img} />
             <div className={styles.penContainer}>
-              <p>點選圖片選擇圖檔</p>
+              <p>選擇圖檔</p>
               <div><FaPen /></div>
             </div>
           </div>

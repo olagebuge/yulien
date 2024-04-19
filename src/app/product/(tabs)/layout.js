@@ -5,7 +5,7 @@ import NavLink from "@/components/navbar/links/navLink/navLink";
 const TabLayout = async ({children}) => {
  
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <h1>      
        商品管理<span className={styles.mediaHelp}> 您可以在此編輯您的商品</span>
       </h1>

@@ -8,7 +8,7 @@ const MediaPage = async () => {
   const id = session.user?.id;
 
   return (         
-      <div className={styles.mediaBlock}>
+      <div>
         <UploadImages id={id} />        
       </div>
     

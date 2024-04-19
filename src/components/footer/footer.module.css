@@ -33,10 +33,40 @@
   line-height: 2rem;
 }
 
-@media (max-width:768px){
+@media screen and (max-width:1024px){
   .container{
-    flex-direction: column;
+    height: 180px;
+    padding: 30px;
     align-items: center;
     justify-content: space-around;
+  }
+
+  .listInfo{
+    flex-direction: column;
+  }
+  .listInfo li{
+    padding: 5px;
+  }
+  .listInfo li + li{
+    border-left: none;
+  }
+}
+
+@media screen and (max-width:768px){
+  .container{
+    height: 220px;
+    flex-direction: column;
+  }
+  .text{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .copyright{
+    font-size: 10px;
+  }
+  .listInfo{
+    font-size: 14px;
   }
 }

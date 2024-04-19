@@ -61,12 +61,13 @@ const ImgSelectButton = ({ btnText, desText, media, productCover }) => {
             </span>
             <div className="alignBox">
               <p>{desText}</p>
-              <div className="flexBox">
+              <div className={`flexBox ${styles.innerBox}`}>
                 {media?.length ? (
                   media.map((m) => (
                     <div
                       onClick={() => onCoverHandler(m.url)}
-                      className={(cover === m.url || selectCover=== m.url)&& styles.checkOutline}
+                      key={m._id}
+                      className={(cover === m.url || selectCover=== m.url)? styles.checkOutline : ""}
                     >
                       <ImgComponent item={m} />
                     </div>

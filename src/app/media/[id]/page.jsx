@@ -37,7 +37,7 @@ const SingleMediaPage = async ({ params }) => {
   //const media = await getData(id);  
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className="alignTitle">
         <FaFilePen />
         編輯圖片

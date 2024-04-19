@@ -25,10 +25,10 @@
 .imgUpdate button {
   padding: 10px;
   cursor: pointer;  
-  background-color: var(--bg);
-  border: 1px solid #fff;
+  font-size: 16px;
+  border: 1px solid var(--bgDeep);
   border-radius: 5px;
-  color: var(--textColor);
+  color: var(--bgDeep);
   font-weight: bold;
 }
 
@@ -39,7 +39,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:rgba(77, 77, 87, 0.8);
+  color:#fff;
+  background-color:rgba(36, 36, 36, 0.8);
   font-size: 0.8rem;
 }
 .penContainer p{
@@ -52,4 +53,5 @@
   background-color: var(--bg);
   padding: 7px ;
   border-radius:5px 0px 0px 0px;
+  color:#000;
 }

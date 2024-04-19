@@ -28,7 +28,7 @@ const CateMangeList = ({ cate, initialProducts }) => {
       <div>
         <div className={styles.sideCates}>
           <div
-            className={!selectCate && styles.active}
+            className={!selectCate ? styles.active : ""}
             onClick={() => onSelectCate(null)}
           >
             全部
@@ -37,14 +37,14 @@ const CateMangeList = ({ cate, initialProducts }) => {
             ? cate.map((c) => (
                 <div
                   onClick={() => onSelectCate(c.title)}
-                  className={selectCate === c.title && styles.active}
+                  className={selectCate === c.title ? styles.active : ""}
                 >
                   {c.title}
                 </div>
               ))
             : ""}
            <div
-            className={selectCate === "未分類" && styles.active}
+            className={selectCate === "未分類" ? styles.active : ""}
             onClick={() => onSelectCate("未分類")}
           >
             未分類

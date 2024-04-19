@@ -1,10 +1,14 @@
 import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
-import { getPosts } from "@/lib/data";
+import { getPosts,getCategory } from "@/lib/data";
+import Image from "next/image";
+import PostSideBar from "@/components/postSideBar/PostSideBar";
 
 // FETCH DATA WITH AN API
 const getData = async () => {
-  const res = await fetch(`${process.env.BLOG_URL}`, {next:{revalidate:3600}});
+  const res = await fetch(`${process.env.BLOG_URL}`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -13,21 +17,48 @@ const getData = async () => {
   return res.json();
 };
 
-const BlogPage = async () => {
+export const metadata = {
+  title: "祭拜殿堂",
+  description: "拜拜有許多你可能不知道的眉角，閱讀祭拜殿堂的文章，讓你的心意能確實傳達給祖先神明",
+};
 
+const BlogPage = async () => {
   // FETCH DATA WITH AN API
   //const posts = await getData();
 
   // FETCH DATA WITHOUT AN API
- const posts = await getPosts();
+  const posts = await getPosts();
+  const categories = await getCategory();
 
   return (
-    <div className={styles.container}>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <PostCard post={post} />
+    <div className={`container ${styles.container}`}>                
+      <section className={`flexBox ${styles.textContianer}`}>
+        <div>
+          <h2 className="subtitle">Tips</h2>
+          <h1 className="h1Title">祭拜殿堂</h1>
         </div>
-      ))}
+        <p className="desc">
+          拜拜有許多你可能不知道的眉角<br />
+          祭拜殿堂來告訴你，讓你的心意能確實傳達給祖先神明
+        </p> 
+        <Image src="/blog_bg.svg" width={420} height={420} alt="" className={styles.bgImg}/>
+      </section>
+      <section className="flexBox">
+        {posts.slice(0, 3).map((post) => (
+          <div key={post.id} className={styles.postContainer}>
+            <Image src={post.img} fill alt="文章封面" className={styles.img}/>
+            <p className={styles.postTitle}>{post.title}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className={styles.postBlock}>
+      <h3 className={`alignButton ${styles.h3Title}`}>
+        <div className="iconContainer"><Image src="/blog_icon.svg" fill alt="所有文章icon"/></div>
+        所有文章
+      </h3>
+        <PostSideBar cate={categories} initialPosts={posts}/>
+      </section>
     </div>
   );
 };

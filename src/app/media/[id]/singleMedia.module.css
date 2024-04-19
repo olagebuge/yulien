@@ -1,6 +1,21 @@
+.container{
+  display: flex;
+  max-width: 1480px;
+  min-height: calc(100dvh - 220px);
+  flex-direction: column;
+  margin:0 auto;
+  padding: 80px 30px 100px;
+}
+
+.container h1{
+  width: 100%;
+  text-align: left;
+}
+
 .flexContainer {
   display: flex;
   gap: 50px;  
+  width: 100%;
   min-height:70dvh;
 }
 

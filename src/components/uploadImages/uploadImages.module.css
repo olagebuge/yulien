@@ -2,14 +2,16 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  gap: 15px;
-  width: 200px;
+  gap: 20px;
+  width: 100%;
+  padding: 50px;
 }
 
 .imgContainer {
   position: relative;
   width: 120px;
   height: 120px;
+  
 }
 
 .trashCan {
@@ -38,13 +40,14 @@
 .uploadIcon {
   position: relative;
   font-size: 50px;
-  opacity: 0.5;
   padding: 30px;
   width: 120px;
   height: 120px;
-  border: 5px solid #fff;
+  border: 5px solid var(--bgDeep);
   border-radius: 5px;
   cursor: pointer;
+  color:var(--bgDeep);
+  opacity: 0.6;
 }
 
 .uploadImages {
@@ -61,11 +64,11 @@
 .imgUpdate button {
   display: flex;
   align-items: center;
-  gap: 8px;
-  border: 1px solid #fff;
+  gap: 8px;  
   cursor: pointer;
+  border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: var(--bg);
+  background-color: var(--bgDeep);
   color: #fff;
 }

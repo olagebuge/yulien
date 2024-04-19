@@ -32,26 +32,26 @@ const SinglePostPage = async ({ params }) => {
   const { slug } = params;
 
   // FETCH DATA WITH AN API
-  const post = await getData(slug); 
+  const post = await getData(slug);   
   
-  // FETCH DATA WITHOUT AN API
-  // const post = await getPost(slug);
-  console.log(post.userId)
   return (
     <div className={styles.container}>
       {post.img && (
         <div className={styles.imgContainer}>
-          <Image src={post.img} alt="" fill className={styles.img} />
+          <Image src={post.img} alt="文章封面" fill className={styles.img} />
         </div>
       )}
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post?.title}</h1>
-        <div className={styles.detail}>          
+        <div className={styles.detail}>
+
+        {/* 如果刪除又新增同樣會員  會導致id不符合 */}
           {/* {post && (
             <Suspense fallback={<div>Loading...</div>}>
               <PostUser userId={post.userId} />
             </Suspense>
           )} */}
+          
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>發布日期</span>
             <span className={styles.detailValue}>

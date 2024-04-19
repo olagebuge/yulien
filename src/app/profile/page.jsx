@@ -7,13 +7,18 @@ import SPostCard from "@/components/sPostCard/sPostCard";
 import { FaUserPen, FaFileCirclePlus } from "react-icons/fa6";
 import { deletePost } from "@/lib/action";
 
+export const metadata = {
+  title: "個人檔案",
+  description: "會員個人檔案",
+};
+
 const profilePage = async () => {
   const session = await auth();
   const foundUser = await getUser(session.user?.email);
   const posts = await getUserPosts(foundUser.id);
 
   return (
-    <div className={styles.container}>      
+    <div className={`container ${styles.container}`}>      
         <div className={styles.details}>
           {foundUser?.isAdmin ? (
             <span className={styles.roleTag}>管理員</span>
@@ -37,7 +42,7 @@ const profilePage = async () => {
           </Link>
         </div>
         <div className={styles.postContainer}>
-          <h2>最新作品</h2>
+          <h2>最新文章</h2>
           <div className={styles.postInner}>
             {posts.length ? (
               posts.map((post) => (
@@ -51,7 +56,7 @@ const profilePage = async () => {
               ))
             ) : (
               <div className={styles.noPost}>
-                <p>目前還沒有作品T_T</p>
+                <p>目前還沒有文章T_T</p>
                 <Link href="/blog/new" className={styles.iconButton}>
                   <FaFileCirclePlus />
                   立即新增

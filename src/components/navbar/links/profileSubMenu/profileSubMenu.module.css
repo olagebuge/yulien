@@ -8,8 +8,10 @@
   position: fixed;
   width: 100%;
   height: 100dvh;  
+  background-color: rgba(0, 0, 0, 0.2);
   left: 0;
-  top:0;  
+  top:0; 
+  z-index: 999; 
 }
 
 .avatarContainer {
@@ -29,16 +31,23 @@
   z-index: 999;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  padding: 15px 20px ;
+  background-color: var(--bgDeep);
+  padding: 10px;
   gap:10px;
   margin-top: 60px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 14px;
+  font-family: 'Noto Sans TC';
   color:var(--bg);
-  font-weight: 700; 
+  font-weight: 400; 
   text-align: center; 
 }
+
+.subBox hr{
+  border: none;
+  border-bottom: 1px solid #e2d0afbb;
+}
+
 .subBox::before{
   content:"▲";
   position: absolute;
@@ -47,11 +56,12 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 26px;
-  color: #fff;
+  color:  var(--bgDeep);
 }
 
 .logout{
   background-color: #fff;
+  box-shadow: 0px 2px 3px 1px #211e384d;
   color:var(--bg);
   border: none;
   cursor: pointer;
@@ -64,15 +74,16 @@
 .subTitle{
   font-size: 12px;
   font-weight: 400;
-  margin: 6px 0px 3px;
-  color:rgb(145, 147, 153);
-  width: 100px;
+  margin: 5px 0px 3px;
+  color:#fff;
+  width: 120px;
   position: relative;
 }
 .subTitle span{
-  background-color: #fff;
+  background-color: var(--bgDeep);
+  padding: 3px;
   position: absolute;  
-  top:-8px;
+  top:-12px;
   right: 0px;
 }
 
@@ -81,8 +92,8 @@
 }
 
 .subBox button{
-  background-color: var(--bg);
-  color: #fff;
+  background-color: #fff;
+  color: var(--bgDeep);
   padding: 5px 20px;
   border-radius: 5px;    
 }

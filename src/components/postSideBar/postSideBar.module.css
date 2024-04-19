@@ -1,0 +1,60 @@
+.container {
+  display: flex;  
+  gap: 30px;
+}
+.sideCates {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    gap: 8px;
+}
+
+.sideCates div {
+    cursor: pointer;    
+    text-align: center;    
+    padding: 15px;
+    font-size: 18px;    
+    font-weight: 600;
+}
+
+.sideCates div:hover, .sideCates div.active{
+    background: url("/active_bg.svg");  
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    color:#fff;    
+   
+}
+
+.productBlock{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.postContainer {
+  width: 350px;
+  height: 150px;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #E2D0AF;   
+}
+
+.imgContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.textContainer{
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.lookMore{
+  text-decoration: underline;
+  display: block;
+  text-align: right;
+}

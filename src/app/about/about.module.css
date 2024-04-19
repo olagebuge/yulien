@@ -34,6 +34,13 @@
   gap: 10px;
 }
 
+.box:hover p{
+  transform: translateY(-12px);
+}
+.box:hover .imgContainer {
+  transform: scale(0.97);
+}
+
 .imgContainer {  
   position: relative;
   width: 340px;
@@ -62,26 +69,61 @@
 
 .btnBG{
   background: url('../../../public/arr_button_bg.svg') bottom center no-repeat;
-  background-size: contain;
-  padding: 20px;
+  background-size: 250px;
+  padding: 15px;
   font-size: 30px;
   color:var(--bgDeep);
   letter-spacing: 4px;
   font-family: 'Noto Sans TC';
   width: 300px;
 }
-.btnBG img{
-  margin-right: 8px;
+.btnBG:hover{
+  background-position: bottom right;
 }
 
-@media (max-width: 768px) {
+
+@media screen and (max-width: 1024px) {
   .container {
     flex-direction: column;
     text-align: center;
+    padding-top: 100px;
+  }
+  .textContainer{   
+    flex-direction: column;
+    margin: 0;
   }
 
+  .kvContainer{
+    width: 100%;
+    height: 280px;
+    margin: 0px;
+  }
+  .img{
+    object-position: center bottom;    
+  }
+
+  .imgContainer{
+    width:240px;
+    height: 240px;
+  }
+  .boxes{    
+    gap: 20px;
+    margin: -250px auto 100px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .container {
+    align-items: center;
+  }
   .boxes{
     flex-direction: column;
-    gap: 50px;
+  }
+  .textContainer{
+    width: 100%;    
+  }
+  .w500{
+   text-align: left;
+   padding: 0;
   }
 }

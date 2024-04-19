@@ -1,4 +1,16 @@
+.container{
+    flex-direction: column;
+    min-height: calc(100dvh - 220px);
+    padding-top: 30px;
+}
+
+.h1Title{
+    width: 100%;
+    margin-bottom: 0px;     
+}
+
 .hContainer{
+    width: 100%;
     display: flex;
     gap:60px;
 }
@@ -39,10 +51,12 @@
 }
 .edit{
     background-color: rgb(255, 255, 255);
-    color:var(--bg);    
+    color:var(--bgDeep);  
+    border: 1px solid var(--bgDeep);  
     padding: 5px 12px;
     border-radius: 5px;    
-    font-size: 14px;    
+    font-size: 14px;
+    font-family: 'Noto Sans TC'; 
     cursor: pointer;
 }
 .delete{

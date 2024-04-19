@@ -1,13 +1,29 @@
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 100px;
+  padding: 100px 30px;
+  gap: 40px;
+  min-height: calc(100dvh - 220px);
+  background: url('../../../public/contact_bg.svg') no-repeat bottom right -50px;
 }
 
-.imgContainer {
-  flex: 1;
+.imageBlock { 
+  width: 45%;
   height: 500px;
   position: relative;
+}
+.desc{
+  width:380px;
+  display: flex;
+  align-items: center;
+  line-height: 36px;
+}
+
+.imgContainer{
+  position: relative;
+  width: 120px;
+  height: 120px;
 }
 
 .img {
@@ -15,7 +31,7 @@
 }
 
 .formContainer {
-  flex: 1;
+  width: 55%;  
 }
 
 .form {
@@ -25,27 +41,138 @@
 }
 
 .form input,
-.form textarea {
+.form textarea,
+.form select {
   padding: 20px;
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color: var(--bgSoft);
+  background-color: #E2D9CB;
   color: var(--text);
+  width: 100%;
+  font-size: 18px;
+  font-family: 'Noto Sans TC';
 }
 
 .form button {
-  padding: 20px;
-  background-color: var(--btn);
-  color: var(--text);
+  padding: 15px;
+  background-color: var(--bgDeep);
+  color: #fff;
   font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 18px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+.form label{  
+  display: block;
+  width:90px; 
+  text-align: right;
+  margin-right: 10px; 
+}
+
+.rowInput{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contactBtn{
+  display: flex;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  justify-content: center;
+  gap:30px;
+  align-items: center;
+  font-size: 20px;
+  color: #2B3961;
+  letter-spacing: 3px;
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.15);
+}
+.h3Title{
+  font-size: 30px;
+  letter-spacing: 4px;
+  font-family: 'Noto Sans TC';
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 48px;
+  color: #536AAA;
+}
+
+.lineDec{
+  border-bottom: 2px solid #E2D0AF;
+}
+
+
+
+@media (max-width: 1024px) {
+  .imageBlock{ 
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 360px;
+  }
+
+  .formContainer{
+    width: 100%;    
+  }
+  
+}
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+  .container{
+    padding: 50px 0;
+    background-size: 70%; 
+    gap:30px;
+  }
+  .desc{
+    width: 100%;
+    padding: 15px;
+    line-height: 30px; 
+    letter-spacing: 0px;
+    display: flex;    
+    justify-content: center; 
+  }
+  .h3Title{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .contactBtn{
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    gap:15px;
+    padding: 20px;
+  }
+  .imgContainer{
+    width: 80px;
+    height: 80px;
+  }
+
+  .form {    
+    gap: 15px;
+  }
+  
+  .form input,
+  .form textarea,
+  .form select {
+    padding: 10px;    
+    font-size: 16px;   
+  }
+  
+  .form button {
+    padding: 12px;    
+    font-size: 16px;    
+  }
+
+  .form label{
+    font-size: 15px;
   }
 }

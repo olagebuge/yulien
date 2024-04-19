@@ -5,13 +5,33 @@
   width: 90%;
   justify-content: space-between;
 }
-.checkOutline{
-  border: 3px solid red;
+.checkOutline{  
+  position: relative;
+  border: 2px solid orange;
+}
+.checkOutline::before{
+  content: '✔';
+  position: absolute;
+  background-color: orange;
+  padding: 3px 6px 4px;
+  border-radius: 0px 0px 5px 0px;
+  color: #fff;
+  z-index: 5;
 }
 .cancelIcon{
   position: absolute;
-  background-color: black;
-  padding: 4px;
+  background-color: rgb(218, 77, 34);
+  color:#fff;
+  padding: 5px;
+  border-radius: 0px 0px 5px 0px;
   font-size: 12px;
   cursor: pointer;
+}
+
+.innerBox{
+  height: 700px;
+  justify-content: flex-start;   
+  align-content:flex-start; 
+  flex-wrap: wrap;
+  overflow-y: auto;
 }

@@ -12,7 +12,7 @@ const profileEditPage = async () => {
   const foundUser = await getUser(session.user?.email);
 
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <ul className={styles.leftList}>
         <li className={styles.active}>
           <Link href="#">基本設定</Link>

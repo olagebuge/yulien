@@ -21,7 +21,7 @@ const ProductsManagePage = async () => {
   const categories = await getCategory();
 
   return (
-    <div className={styles.container}>      
+    <div>      
       <CateMangeList initialProducts={products} cate={categories}/>
     </div>
   );
