@@ -18,7 +18,7 @@ const Navbar = async () => {
         <Image src="/lotuslogo.svg" width={50} height={50} alt="Logo"/>
         <p className={styles.logoText}>Forever Lotus</p>
       </Link> 
-      <Links/>
+      <Links/>      
       <UserAvatar foundUser={foundUser}/>
     </div>
   )

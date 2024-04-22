@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 600px;
 }
 .container label{
   display: flex;
+  width:90px;
   gap:20px;
   align-items: center;
 }
@@ -12,7 +14,7 @@
 .container textarea,
 .container select {
   padding: 20px;
-  background-color: var(--bgSoft);
+  background-color: #E2D9CB;
   width: 90%;
   border: none;
   border-radius: 5px;
@@ -22,12 +24,14 @@
   width: 100%;
 }
 .container button {
-  padding: 20px;
+  padding: 15px;
   cursor: pointer;
-  background-color: var(--btn);
+  background-color: var(--bgDeep);
   border: none;
   border-radius: 5px;
-  color: var(--textColor);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 3px;
   font-weight: bold;
 }
 

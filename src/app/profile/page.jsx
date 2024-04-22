@@ -15,7 +15,7 @@ export const metadata = {
 const profilePage = async () => {
   const session = await auth();
   const foundUser = await getUser(session.user?.email);
-  const posts = await getUserPosts(foundUser.id);
+  const posts = await getUserPosts(foundUser?.id);
 
   return (
     <div className={`container ${styles.container}`}>      
@@ -26,7 +26,7 @@ const profilePage = async () => {
             <span className={styles.roleTag}>一般會員</span>
           )}
           <Image
-            src={foundUser.image || "/noAvatar.png"}
+            src={foundUser?.image || "/noAvatar.png"}
             alt="avatar"
             width={120}
             height={120}

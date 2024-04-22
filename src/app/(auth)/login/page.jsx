@@ -9,17 +9,7 @@ const LoginPage = () => {
       <div className={styles.wrapper}>
         <div>
         <p className={styles.fastLoginWords}>快速登入</p>
-        <div className={styles.iconContainer}>
-          <form action={handleGithubLogin}>
-            <button className={styles.github}>
-              <Image
-                src="/giticon.png"
-                width={27}
-                height={26}
-                alt="googleLogin"
-              />
-            </button>
-          </form>
+        <div className={styles.iconContainer}>          
           <form action={handleGoogleLogin}>
             <button className={styles.google}>
               <Image

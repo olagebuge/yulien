@@ -1,13 +1,15 @@
 .container {
   display: flex;
   flex-direction: column; 
+  justify-content: flex-start;
   gap: 30px;
   padding: 100px;
+  min-height: calc(100dvh - 220px);
 }
 
 .textContianer{
-  align-items: center; 
-  position: relative;
+  align-items: center;
+  display: flex;
 }
 
 .postContainer{
@@ -17,17 +19,19 @@
 }
 
 .bgImg{
-  position: absolute;
+  position: relative;
   width: 350px;
   height: 350px;
-  right: -210px;
-  top: -80px;
-  z-index: 0;
+  margin: 0px -100px; 
+  z-index: 0; 
 }
 
 .img{
   position: absolute;
+  object-fit: contain;
+  z-index: 1;
 }
+
 .postTitle{
   position: absolute;
   color:#fff;
@@ -53,4 +57,12 @@
 
 .postBlock{
   width: 100%;
+}
+
+@media (max-width:1024px){
+  .bgImg{
+    width:270px;
+    height: 270px;
+    margin: -150px;
+  }
 }

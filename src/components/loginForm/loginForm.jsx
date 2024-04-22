@@ -13,7 +13,7 @@ const LoginForm = () => {
       <input type="text" placeholder="請輸入信箱" name="email" />
       <input type="password" placeholder="請輸入密碼" name="password" />
       <button>登入</button>
-      {state?.error}
+      <div className={styles.error_message}>{state?.error}</div>
       <Link href="/register">
         {"還沒有帳號嗎?"} <b>立即註冊</b>
       </Link>

@@ -20,6 +20,8 @@ body {
   font-family: 'Noto sans TC';
   font-weight: 300;
   letter-spacing: 1px;
+  width: 100%;
+  overflow: hidden;
 }
 
 a {
@@ -41,7 +43,11 @@ a {
   justify-content: center;  
   margin: 0 auto;
 }
-
+.center-height{
+  flex-direction: column;
+  min-height:calc(100dvh - 220px);
+  justify-content: flex-start;
+}
 
 .alignTitle {
   display: flex;
@@ -123,6 +129,10 @@ a {
   width: 120px;
   height: 120px;
 }
+.relaBlock{
+  position: relative;
+  z-index: 5; 
+}
 
 .iconContainer{
   position: relative;
@@ -157,7 +167,8 @@ a {
 
 .overlay {
   width: 100%;
-  height: 100dvh;
+  min-height: calc(100dvh - 220px);
+  height: 100%;
   position: fixed;
   background-color: rgba(25, 25, 25, 0.6);
   left: 0px;
@@ -239,7 +250,7 @@ a {
   font-weight: 400;
   color:#536AAA;
   margin-top: 10px;
-  margin-bottom:20px;
+  margin-bottom:20px;   
 }
 .subtitle{
   font-size: 18px;  
@@ -271,13 +282,12 @@ a {
     padding:0px 0px 100px; 
     padding-top: 20px;    
   }
-  .h1Title{
-    width: 100%;
+  .h1Title{    
     text-align: left;
   }
-  .subtitle{
-    width: 100%;
+  .subtitle{   
     text-align: left;
+    align-self: flex-start;
   }
 }
 

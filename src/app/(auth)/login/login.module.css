@@ -1,12 +1,11 @@
 .container{
-  display: flex;
-  align-items: center;
+  display: flex;  
   justify-content: center;
+  padding-top: 150px;
+  min-height: calc(100dvh - 220px);
 }
-
 .wrapper{
-  width: 500px;
-  background-color: var(--bgSoft);
+  width: 500px;  
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -18,7 +17,7 @@
   position: relative;
   width: 320px;
   margin: 0 auto;
-  color: rgb(156, 156, 156);
+  color: var(--bgDeep);
 }
 .fastLoginWords::before, .fastLoginWords::after{
   content: '';

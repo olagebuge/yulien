@@ -66,6 +66,7 @@
 @media (max-width:768px){
     .mySwiper{
         width: 90dvw;
+        max-width: 400px;
         height: 320px;
         background-size: 150px;
         background-position: bottom 50px left;

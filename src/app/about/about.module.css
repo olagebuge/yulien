@@ -82,7 +82,7 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .container {
     flex-direction: column;
     text-align: center;
@@ -112,15 +112,21 @@
   }
 }
 
-@media screen and (max-width: 870px) {
+@media (max-width: 870px) {
   .container {
     align-items: center;
+    max-width: 520px;
   }
   .boxes{
     flex-direction: column;
   }
   .textContainer{
     width: 100%;    
+  }
+  .textContainer>div{
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
   }
   .w500{
    text-align: left;

@@ -2,3 +2,27 @@
 .mobileLinks {
   display: none;
 }
+
+@media (max-width:768px) {
+
+  .menuButton,
+  .mobileLinks {
+    display: block;
+  }
+
+  .mobileLinks{
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1000;    
+    top: 80px;
+    right: 0px;
+    border-radius: 5px 0px 0px 5px;
+    padding: 10px 20px 40px;
+  }
+
+  .xmark{
+    margin-bottom: 20px;
+  }
+}

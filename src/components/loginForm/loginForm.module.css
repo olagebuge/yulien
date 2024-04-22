@@ -3,22 +3,32 @@
   flex-direction: column;
   text-align: center;
   gap: 30px;
+  font-family: 'Noto Sans TC';
 }
 
 .form input{
   padding: 20px;
-  background-color: var(--bg);
-  color: var(--textColor);
+  background-color: #E2D9CB;
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form button{
+  padding: 15px;
+  cursor: pointer;
+  background-color: var(--bgDeep);
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
 }
 
-.form button{
-  padding: 20px;
-  cursor: pointer;
-  background-color: var(--btn);
-  color: var(--textColor);
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
+.error_message{
+  color:rgb(202, 30, 30);
+  text-decoration: underline;  
+  letter-spacing: 1px;
 }

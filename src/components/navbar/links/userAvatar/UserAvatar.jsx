@@ -1,10 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import ProfileSubMenu from "../profileSubMenu/profileSubMenu";
 import NavLink from "../navLink/navLink";
-import styles from "./userAvatar.module.css"
+import styles from "./userAvatar.module.css";
+import { FaXmark, FaEllipsis } from "react-icons/fa6";
+
+
+const links =[{
+  title: "關於我們",
+  path: "/about",
+},
+{
+  title: "祭拜殿堂",
+  path: "/blog",
+},
+{
+  title: "商品選購",
+  path: "/product",
+},
+{
+  title: "聯絡我們",
+  path: "/contact",
+}]
 
 const UserAvatar = ({ foundUser }) => {
   const [open, setOpen] = useState(false);
@@ -12,29 +30,26 @@ const UserAvatar = ({ foundUser }) => {
   return (
     <div>
       {foundUser ? (
-        <>
-          {foundUser?.isAdmin && (
-            <NavLink item={{ title: "管理", path: "/admin" }} />
-          )}
+        <>          
           <ProfileSubMenu image={foundUser.image || "/noAvatar.png"} />
         </>
       ) : (
-        <NavLink item={{ title: "登入", path: "/login" }} />
-      )}
-      <Image
-        className={styles.menuButton}
-        src="/menu.png"
-        alt=""
-        width={30}
-        height={30}
-        onClick={() => setOpen((prev) => !prev)}
-      />
-      {open && (
-        <div className={styles.mobileLinks}>
-          {links.map((link) => (
-            <NavLink item={link} key={link.title} />
-          ))}
-        </div>
+        <>
+          <FaEllipsis
+            className={styles.menuButton}
+            onClick={() => setOpen((prev) => !prev)}
+          />
+          {open && (
+            <div className="overlay" onClick={() => setOpen(false)}>
+            <div className={styles.mobileLinks}>
+              <FaXmark onClick={() => setOpen(false)} className={styles.xmark}/>
+              {links.map((link) => (
+                <NavLink item={link} key={link.title} />
+              ))}
+            </div>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

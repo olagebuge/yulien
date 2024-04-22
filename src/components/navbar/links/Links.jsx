@@ -4,6 +4,7 @@
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
 
+
 const links = [
   {
     title: "關於我們",
@@ -36,9 +37,9 @@ const Links = () => {
       <div className={styles.links}>
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
-        ))}
-       
+        ))}       
       </div>
+     
      
     </div>
   );

@@ -1,7 +1,8 @@
 .container{
   display: flex;
-  align-items: center;
+  padding-top: 150px;
   justify-content: center;
+  min-height: calc(100dvh - 220px);
 }
 
 .wrapper{
@@ -15,3 +16,8 @@
   border-radius: 5px;
 }
 
+@media (max-width:768px){
+  .container{
+    padding: 50px 0px 100px;
+  }
+}

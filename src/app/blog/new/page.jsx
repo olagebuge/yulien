@@ -24,7 +24,7 @@ const NewBlogPage = async() => {
   const categories = await getCategory();
   
   return (
-    <div>
+    <div className="container center-height">
       <h1 className="alignTitle"><FaFileCirclePlus />創建新文章</h1>
        <AdminPostForm userId={userId} media={medias} cate={categories}/>
     </div>

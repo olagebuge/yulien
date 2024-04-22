@@ -22,10 +22,10 @@ const AdminPostForm = async ({ userId, media, cate }) => {
             media={media}
           />
         </div>
-        <label>
-          文章標題
+        <div style={{display:"flex"}}>
+        <label>文章標題</label>
           <input type="text" name="title" placeholder="請輸入文章標題" />
-        </label>
+        </div>
         <CateTag cate={cate} />
         <RegexStatus title={"文章代稱"} />
         <h3>文章內容</h3>

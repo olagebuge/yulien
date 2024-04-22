@@ -18,18 +18,18 @@ const RegisterForm = () => {
 
   return (
     <form className={styles.form} action={formAction}>
-      <input type="text" placeholder="username" name="username" />
-      <input type="email" placeholder="email" name="email" />
-      <input type="password" placeholder="password" name="password" />
+      <input type="text" placeholder="使用者名稱" name="username" />
+      <input type="email" placeholder="註冊Email電子郵件" name="email" />
+      <input type="password" placeholder="註冊密碼" name="password" />
       <input
         type="password"
-        placeholder="password again"
+        placeholder="請再次輸入註冊密碼"
         name="passwordRepeat"
       />
-      <button>Register</button>
+      <button>註冊</button>
       {state?.error}
       <Link href="/login">
-        Have an account? <b>Login</b>
+        已經擁有帳號了? <b>登入</b>
       </Link>
     </form>
   );

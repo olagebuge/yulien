@@ -8,33 +8,33 @@ const CateTag = ({ cate, productCate }) => {
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState(productCate || ["未分類"]);
 
-  const onClickAddCate =()=>{
-    setOpen(true)
-  }
-  const onCloseAddCate =()=>{
-    setOpen(false)
-  }
+  const onClickAddCate = () => {
+    setOpen(true);
+  };
+  const onCloseAddCate = () => {
+    setOpen(false);
+  };
 
   const onAddCategory = (cateTitle) => {
     if (categories.includes(cateTitle)) {
       // 若該類別已被選中，則從 categories 陣列中移除
       setCategories(categories.filter((c) => c !== cateTitle));
-      if(categories.length === 0){
-        setCategories(["未分類"])
+      if (categories.length === 0) {
+        setCategories(["未分類"]);
       }
     } else {
       // 否則將該類別添加到 categories 陣列中
-      if(categories[0] === "未分類"){        
+      if (categories[0] === "未分類") {
         setCategories([cateTitle]);
-      }else{
+      } else {
         setCategories([...categories, cateTitle]);
-      }      
+      }
     }
   };
 
   return (
-    <label>
-      商品類別
+    <div style={{display:"flex"}}>
+      <label>商品類別</label>
       <input
         type="hidden"
         name="categories"
@@ -57,18 +57,26 @@ const CateTag = ({ cate, productCate }) => {
           ))
         ) : (
           <div className={styles.tips}>
-            目前沒有任何類別…<span className={styles.addnow} onClick={onClickAddCate}>快速新增</span>
+            目前沒有任何類別…
+            <span className={styles.addnow} onClick={onClickAddCate}>
+              快速新增
+            </span>
           </div>
         )}
       </div>
       {open && (
         <div className="overlay" onClick={onCloseAddCate}>
-          <div className="modal" onClick ={(e)=>{e.preventDefault()}}>
+          <div
+            className="modal"
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+          >
             <CategoryForm />
           </div>
         </div>
       )}
-    </label>
+    </div>
   );
 };
 
