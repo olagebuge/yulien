@@ -97,11 +97,10 @@ const BlogPage = async () => {
             物流方式
           </h2>
           <p className={styles.deliverDesc}>
-            訂購貨物邊長小於30公分者，可以使用
-            店到店及iPost取件服務，若訂購商品較多， 請選擇宅配或郵局包裹。
+            訂購貨物邊長小於30公分者，可以使用店到店及iPost取件服務，若訂購商品較多， 請選擇宅配或郵局包裹。
           </p>
         </div>
-        <div>
+        <div className={styles.listBlock}>
           <ul className={styles.points}>
             <li>超商店到店</li>
             <li>i郵箱寄件</li>

@@ -13,7 +13,7 @@
     cursor: pointer;    
     text-align: center;    
     padding: 15px;
-    font-size: 18px;    
+    font-size: 18px;     
     font-weight: 600;
 }
 
@@ -46,15 +46,85 @@
   height: 150px;
 }
 
-.textContainer{
-  padding: 20px 15px;
-  display: flex;
-  flex-direction: column;
-  gap:10px;
+.img{
+  object-fit: cover;
 }
 
+.textContainer{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap:5px; 
+  letter-spacing: 0px;
+  width: 200px;
+}
+
+.textContainer h3{
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 1px;  
+}
+.textContainer .desc{
+  font-size: 14px;
+  line-height: 21px;
+  font-family: 'Noto Sans TC';
+  color:rgb(95, 82, 57);
+  letter-spacing: 0.5px;
+}
 .lookMore{
   text-decoration: underline;
   display: block;
   text-align: right;
+}
+
+@media (max-width:1024px){
+  .sideCates {
+    width:200px;
+  }
+  .productBlock{
+    width: 100%;
+  }
+  .postContainer {
+    width: 100%;
+    height: 100px;
+  }
+  .imgContainer {
+    width: 300px;
+    height: 100px;
+  }
+  .textContainer{
+    width: 100%;
+  }
+}
+
+@media (max-width:768px){
+  .container{
+    flex-direction: column;
+    padding-bottom: 150px;
+    gap:10px;
+  }
+  .sideCates{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;    
+  }
+
+  .sideCates div {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .sideCates div:hover, .sideCates div.active{
+    background-size: auto;
+  }
+
+  .postContainer {    
+    height: 150px;
+  }
+  .imgContainer {
+    width: 150px;
+    height: 150px;
+  }
+  .textContainer{
+    width: 200px;
+  }
 }

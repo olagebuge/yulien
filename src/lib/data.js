@@ -1,4 +1,4 @@
-import { Post, User, Media, Category, Product } from "./models";
+import { Post, User, Media, Category, Product, Order } from "./models";
 import { connectToDb } from "./utils";
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -158,6 +158,18 @@ export const getProduct = async () => {
   } catch (err) {
     console.log(err);
     throw new Error("找不到產品");
+  }
+};
+
+export const getOrders= async () => {
+  try {    
+    const orders = await Order.find();
+
+    return orders;
+    
+  } catch (err) {
+    console.log(err);
+    throw new Error("找不到訂單");
   }
 };
 

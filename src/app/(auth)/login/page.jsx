@@ -1,5 +1,5 @@
 import LoginForm from "@/components/loginForm/loginForm";
-import { handleGithubLogin, handleGoogleLogin } from "@/lib/action";
+import {handleGoogleLogin } from "@/lib/action";
 import styles from "./login.module.css";
 import Image from "next/image";
 

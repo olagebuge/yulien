@@ -34,10 +34,7 @@ const postSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-    },
-    summary:{
-      type: String,
-    },
+    },   
     desc: {
       type: String,
       required: true,
@@ -154,9 +151,41 @@ const mediaSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+//問題及訂單
+const orderSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },   
+    phone: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    situation: {
+      type: String,
+      default:"新問題/訂單",
+    },
+    question: {
+      type: String,
+      required: true,      
+    },
+    content:{
+      type: String,
+      required: true,
+    }
+  },
+  { timestamps: true }
+);
+
 
 export const User = mongoose.models?.User || mongoose.model("User", userSchema);
 export const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);
 export const Product = mongoose.models?.Product || mongoose.model("Product", productSchema);
 export const Category = mongoose.models?.Category || mongoose.model("Category", categorySchema);
 export const Media = mongoose.models?.Media || mongoose.model("Media", mediaSchema);
+export const Order = mongoose.models?.Order || mongoose.model("Order", orderSchema);

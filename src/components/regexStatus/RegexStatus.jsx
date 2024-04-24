@@ -19,7 +19,7 @@ const RegexStatus = ({ title, productSlug }) => {
   };
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className="rowInput">
         <label>{title || "代稱"}</label>
         <input
           type="text"

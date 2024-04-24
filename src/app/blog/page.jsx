@@ -48,7 +48,7 @@ const BlogPage = async () => {
             src="/blog_bg.svg"
             fill
             alt="blog_香爐背景"
-            className={styles.img}
+            className={styles.img_kv}
           />
         </div>
       </section>

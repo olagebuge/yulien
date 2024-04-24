@@ -3,8 +3,9 @@
 import CategoryForm from "../categoryForm/CategoryForm";
 import styles from "./cateTag.module.css";
 import { useState } from "react";
+import { FaXmark } from "react-icons/fa6";
 
-const CateTag = ({ cate, productCate }) => {
+const CateTag = ({ cate, productCate, media }) => {
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState(productCate || ["未分類"]);
 
@@ -69,10 +70,11 @@ const CateTag = ({ cate, productCate }) => {
           <div
             className="modal"
             onClick={(e) => {
-              e.preventDefault();
+              e.stopPropagation();
             }}
           >
-            <CategoryForm />
+            <FaXmark onClick={onCloseAddCate} className={styles.xmark}/>
+            <CategoryForm media={media}/>
           </div>
         </div>
       )}

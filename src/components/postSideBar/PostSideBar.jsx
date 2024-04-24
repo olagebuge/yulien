@@ -58,11 +58,11 @@ const PostSideBar = ({ cate, initialPosts }) => {
             key={post._id}
           >
             <div className={styles.imgContainer}>
-              <Image src={post.img} fill alt={"這我還想不到該怎麼辦"} />
+              <Image src={post.img} fill alt={"這我還想不到該怎麼辦"} className={styles.img}/>
             </div>
             <div className={styles.textContainer}>
               <h3>{post.title}</h3>
-              <p className={styles.desc}>文章摘要</p>
+              <p className={styles.desc}>{post?.desc.slice(0,15)}...</p>
             </div>
           </Link>
         ))}

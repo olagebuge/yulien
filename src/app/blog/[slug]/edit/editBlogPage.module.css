@@ -1,0 +1,5 @@
+.container{
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100dvh - 220px);
+}

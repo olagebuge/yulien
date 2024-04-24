@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { Post, User, Media, Category, Product } from "./models";
+import { Post, User, Media, Category, Product, Order } from "./models";
 import { connectToDb } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
@@ -12,12 +12,12 @@ export const addPost = async (prevState, formData) => {
   // const desc = formData.get("desc");
   // const slug = formData.get("slug");
 
-  const { title, desc, slug, userId,img, categories } = Object.fromEntries(formData);
+  const { title, desc, slug, userId,img, categories } = Object.fromEntries(formData);  
 
   try {
     connectToDb();
     const newPost = new Post({
-      title,
+      title,      
       img,
       desc,
       slug,
@@ -31,11 +31,12 @@ export const addPost = async (prevState, formData) => {
     revalidatePath("/blog");
     revalidatePath("/admin");
     revalidatePath("/profile");
-    
+
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
   }
+  redirect("/blog");
 };
 
 export const deletePost = async (formData) => {
@@ -289,9 +290,9 @@ export const addProduct = async (prevState, formData) => {
         v.stocks = parseInt(v.stocks);
       }
     });
-
+    
     const newProduct = new Product({
-      title,
+      title,      
       number,
       desc,
       img,
@@ -386,4 +387,35 @@ export const toggleShelves = async(formData) => {
   }
   
   redirect("/product");
+};
+
+
+export const addOrder = async (prevState, formData) => {
+
+  const { name, phone, email, situation, question, content } = Object.fromEntries(formData); 
+
+  let qType = "";
+    if (question === "takePrice") {
+      qType = "取得報價單";
+    } else if (question === "question") {
+      qType = "訂購相關問題";
+    } else {
+      qType = "其他";
+    }
+
+  try {
+    connectToDb();
+    const newOrder = new Order({
+      name, phone, email, situation, question:qType, content
+    });
+
+    await newOrder.save();
+    
+    revalidatePath("/profile");
+
+  } catch (err) {
+    console.log(err);
+    return { error: "發生錯誤，無法送出訂單!" };
+  }
+  redirect("/profile"); //暫時
 };
