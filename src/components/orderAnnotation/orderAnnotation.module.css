@@ -1,0 +1,27 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.form textarea, .form button{
+    display: block;
+    width:600px;
+}
+.form textarea{
+    padding: 10px;
+    font-size: 16px;
+    background-color: #E2D9CB;
+    border: none;
+    border-radius: 5px;
+}
+.form button{
+    background-color: var(--bgDeep);
+    color:#fff;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}

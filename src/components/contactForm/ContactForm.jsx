@@ -4,8 +4,11 @@ import { addOrder } from "@/lib/action";
 import { useFormState } from "react-dom";
 import styles from "./contactForm.module.css"
 
-const ContactForm = () => {
-  const [state, formAction] = useFormState(addOrder, undefined);
+
+
+const ContactForm = () => { 
+  const [state, formAction] = useFormState(addOrder, undefined);  
+
   return (    
     <form className={styles.form} action={formAction}>
     <div className={styles.rowInput}>
@@ -18,7 +21,7 @@ const ContactForm = () => {
         type="tel"
         id="phone"
         name="phone"
-        placeholder="連絡電話"
+        placeholder="連絡電話"       
       />
     </div>
     <div className={styles.rowInput}>
@@ -27,7 +30,7 @@ const ContactForm = () => {
         type="email"
         id="email"
         name="email"
-        placeholder="請填寫聯絡信箱"
+        placeholder="請填寫聯絡信箱"        
       />
     </div>
     <div className={styles.rowInput}>
@@ -45,11 +48,12 @@ const ContactForm = () => {
         id="content"
         cols="20"
         rows="10"
-        placeholder="請填寫洽詢內容"
+        placeholder="請填寫洽詢內容"        
       ></textarea>
     </div>
 
     <button>確認送出</button>
+    {state?.error}
   </form>
   )
 }

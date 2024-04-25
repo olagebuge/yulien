@@ -2,10 +2,8 @@ import { auth } from "@/lib/auth";
 import styles from "./profile.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { getUser, getUserPosts, getOrders } from "@/lib/data";
-import SPostCard from "@/components/sPostCard/sPostCard";
+import { getUser, getOrders } from "@/lib/data";
 import { FaUserPen, FaFileCirclePlus, FaPlus } from "react-icons/fa6";
-import { deletePost } from "@/lib/action";
 
 export const metadata = {
   title: "個人檔案",
@@ -15,8 +13,10 @@ export const metadata = {
 const profilePage = async () => {
   const session = await auth();
   const foundUser = await getUser(session.user?.email);
-  const posts = await getUserPosts(foundUser?.id);
   const orders = await getOrders();
+
+  const unreadOrders = orders.filter((order) => !order.read);
+  const historyOrders = orders.filter((order) => order.read);
 
   return (
     <section className={`container ${styles.container}`}>
@@ -42,31 +42,71 @@ const profilePage = async () => {
           <FaUserPen /> 更改資訊
         </Link>
       </div>
-      <div className={styles.postContainer}>
-        <h2>最新訂單</h2>
-        目前有{orders.length}張訂單
-        {orders.length > 0
-          ? orders.map((order) => (
-              <div key={order._id} className={styles.orderContainer}>
-                <div className={styles.date}>
-                  <span>{`${new Date(order.createdAt)
-                    .getFullYear()
-                    .toString()}-${
-                    parseInt(new Date(order.createdAt).getMonth()) + 1
-                  }-${new Date(order.createdAt).getDate()}`}</span>
-                  <span>{order.situation}</span>
-                </div>
-                <div className={styles.orderName}>
-                  <h3>{order.name}</h3>
-                  <p>{order.phone}</p>
-                  <p>{order.email}</p>
-                </div>
-                <p>{order.question}</p>
-                <p>{order.content.slice(0, 10)}...</p>
-              </div>
-            ))
-          : ""}
-      </div>
+
+      <section className={styles.colBlock}>
+        <div className={styles.postContainer}>
+          <h2>最新訂單</h2>
+          目前有{unreadOrders.length}筆新洽詢
+          {unreadOrders.length > 0
+            ? unreadOrders.map((order) => (
+                <Link
+                  key={order._id}
+                  className={styles.orderContainer}
+                  href={`/order/${order._id}`}
+                >
+                  <div className={styles.date}>
+                    <span>{`${new Date(order.createdAt)
+                      .getFullYear()
+                      .toString()}-${
+                      parseInt(new Date(order.createdAt).getMonth()) + 1
+                    }-${new Date(order.createdAt).getDate()}`}</span>
+                    <span>{order.situation}</span>
+                  </div>
+                  <div className={styles.orderName}>
+                    <h3>{order.name}</h3>
+                    <p>{order.phone}</p>
+                    <p>{order.email}</p>
+                  </div>
+                  <p>【{order.question}】</p>
+                  <p className={styles.summary}>
+                    {order.content.slice(0, 12)}...
+                  </p>
+                </Link>
+              ))
+            : ""}
+        </div>
+        <div className={styles.postContainer}>
+          <h2>歷史洽詢</h2>
+          目前有{historyOrders.length}筆歷史洽詢
+          {historyOrders.length > 0
+            ? historyOrders.map((order) => (
+                <Link
+                  key={order._id}
+                  className={styles.orderContainer}
+                  href={`/order/${order._id}`}
+                >
+                  <div className={styles.date}>
+                    <span>{`${new Date(order.createdAt)
+                      .getFullYear()
+                      .toString()}-${
+                      parseInt(new Date(order.createdAt).getMonth()) + 1
+                    }-${new Date(order.createdAt).getDate()}`}</span>
+                    <span>{order.situation}</span>
+                  </div>
+                  <div className={styles.orderName}>
+                    <h3>{order.name}</h3>
+                    <p>{order.phone}</p>
+                    <p>{order.email}</p>
+                  </div>
+                  <p>【{order.question}】</p>
+                  <p className={styles.summary}>
+                    {order.content.slice(0, 12)}...
+                  </p>
+                </Link>
+              ))
+            : ""}
+        </div>
+      </section>
     </section>
   );
 };

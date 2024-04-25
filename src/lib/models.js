@@ -177,6 +177,14 @@ const orderSchema = new mongoose.Schema(
     content:{
       type: String,
       required: true,
+    },
+    annotation:{
+      type: String,
+      default:"",
+    },
+    read:{
+      type: Boolean,
+      default:false,
     }
   },
   { timestamps: true }

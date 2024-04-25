@@ -1,7 +1,8 @@
 .container{
     flex-direction: column;
     min-height: calc(100dvh - 220px);
-    padding-top: 30px;
+    justify-content: flex-start;
+    padding-top: 100px;    
 }
 
 .h1Title{

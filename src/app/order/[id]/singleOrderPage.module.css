@@ -1,0 +1,39 @@
+.container{
+    flex-direction: column;
+    min-height: calc(100dvh - 220px);
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 800px;
+}
+
+.titleBlock{
+    border-bottom: 1px solid var(--textBrown);
+    padding-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sTitle{
+    font-weight: 700;
+    display: inline-block;
+    width: 100px;
+    border-right: 1px solid var(--textBrown);
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans TC';
+    gap:30px;
+}
+
+.align{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    color:var(--textBrown)
+}

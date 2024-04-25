@@ -6,6 +6,8 @@ import { connectToDb } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
 import { redirect } from "next/navigation";
+import nodemailer from "nodemailer";
+
 
 export const addPost = async (prevState, formData) => {
   // const title = formData.get("title");
@@ -406,10 +408,44 @@ export const addOrder = async (prevState, formData) => {
   try {
     connectToDb();
     const newOrder = new Order({
-      name, phone, email, situation, question:qType, content
+      name, phone, email, situation, question:qType, content, read:false, annotation:""
     });
 
     await newOrder.save();
+
+     // 寄送郵件
+     const transporter = nodemailer.createTransport({
+      service: "gmail",
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        type: "OAuth2",
+        user: process.env.GOOGLE_USER,
+        clientId: process.env.GOOGLE_ID,
+        clientSecret: process.env.GOOGLE_SECRET,
+        refreshToken: process.env.GOOGLE_REFRESH_TOKEN, // 需要加入 refresh token
+        accessToken: process.env.GOOGLE_ACCESS_TOKEN, // 需要加入 access token
+      },
+    });
+
+    const mailOption = {
+      from: process.env.MAILER_FROM,
+      to: process.env.MAILER_TO,
+      subject: "【新問題】來自永蓮紙藝",
+      html: `
+          <h3>哈囉，您有來自永蓮紙藝的新問題</h3>
+          <ul>
+              <li>訪客名稱: ${name}</li>
+              <li>連絡電話: ${phone}</li>
+              <li>電子郵件: ${email}</li>
+              <li>問題類型: ${qType}</li>
+              <li>問題內容: ${content}</li>
+          </ul>
+          `,
+    };
+
+    await transporter.sendMail(mailOption);
     
     revalidatePath("/profile");
 
@@ -418,4 +454,23 @@ export const addOrder = async (prevState, formData) => {
     return { error: "發生錯誤，無法送出訂單!" };
   }
   redirect("/profile"); //暫時
+};
+
+
+
+export const renewAnno = async (prevState, formData) => {
+  const { id, annotation } = Object.fromEntries(formData);
+  
+  console.log(id, annotation);
+
+  try {
+    await Order.findByIdAndUpdate(id, {annotation});
+    revalidatePath("/order");
+    revalidatePath(`/order/${id}`);
+
+    return { success: "更新註解成功!" };
+  } catch (err) {
+    console.log(err);
+    return { error: "更新註解失敗" };
+  }
 };

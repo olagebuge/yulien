@@ -1,27 +1,24 @@
 import { Suspense } from "react";
 import styles from "./managepost.module.css";
 import AdminPosts from "@/components/adminPosts/adminPosts";
-import AdminPostForm from "@/components/adminPostForm/adminPostForm";
-import { auth } from "@/lib/auth";
+import Link from "next/link";
+import { FaFileCirclePlus } from "react-icons/fa6";
 
 const ManagePage = async () => {
 
-  const session = await auth();  
+    
 
   return (
-    <div className={styles.container}>
-      <div className={styles.row}>
+    <section className={styles.container}>
+           
         <div className={styles.col}>
+        <div className={styles.row}><h1>貼文管理</h1> <Link href="/blog/new"><FaFileCirclePlus /> 創建新文章</Link></div>        
           <Suspense fallback={<div>Loading...</div>}>
             <AdminPosts />
           </Suspense>
         </div>
-        <div className={styles.col}>
-          <AdminPostForm userId = {session.user.id} />
-        </div>
-      </div>
      
-    </div>
+    </section>
   );
 };
 

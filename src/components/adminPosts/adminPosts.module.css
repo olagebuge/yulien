@@ -1,3 +1,6 @@
+.container{
+  width: 100%;
+}
 .post {
   margin: 20px 0px;
   display: flex;
@@ -14,9 +17,10 @@
 
 .postButton{
   padding: 5px 10px;
-  background-color: rgba(220, 20, 60, 0.593);
-  color: var(--textColor);
+  background-color: var(--textBrown);
+  color:#fff;
   border-radius: 5px;
   border: none;
+  padding: 8px 15px;
   cursor: pointer;
 }

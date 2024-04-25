@@ -67,9 +67,9 @@ const ProfileSubMenu = ({ image }) => {
               <span>管理</span>
             </p>
             <Link href="/category">類別</Link>
-            <Link href="/blog/new">新增文章</Link>
-            <Link href="/product/manage">商品管理</Link>
-            <Link href="/media/manage">媒體相簿</Link>
+            <Link href="/managepost">文章</Link>
+            <Link href="/product/manage">商品</Link>
+            <Link href="/media/manage">媒體</Link>
             <p className={styles.subTitle}>
               <hr />
             </p>

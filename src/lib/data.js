@@ -18,7 +18,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export const getPosts = async () => {
   try {
     connectToDb();
-    const posts = await Post.find();
+    const posts = await Post.find().sort({ createdAt: -1 });
     return posts;
   } catch (err) {
     console.log(err);
@@ -64,7 +64,7 @@ export const getUserById = async (userId) => {
 export const getUsers = async () => {
   try {
     connectToDb();
-    const users = await User.find();
+    const users = await User.find().sort({ createdAt: -1 });
     return users;
   } catch (err) {
     console.log(err);
@@ -102,7 +102,7 @@ export const getMedias = async () => {
   noStore();
   try {
     connectToDb();
-    const medias = await Media.find();
+    const medias = await Media.find().sort({ createdAt: -1 });
 
     return medias;
   } catch (err) {
@@ -140,7 +140,7 @@ export const getMediaByUrl = async (url) => {
 export const getCategory = async () => {
   try {
     connectToDb();
-    const categories = await Category.find();
+    const categories = await Category.find().sort({ createdAt: -1 });
 
     return categories;
   } catch (err) {
@@ -152,7 +152,7 @@ export const getCategory = async () => {
 export const getProduct = async () => {
   try {
     connectToDb();
-    const products = await Product.find();
+    const products = await Product.find().sort({ createdAt: -1 });
 
     return products;
   } catch (err) {
@@ -163,9 +163,21 @@ export const getProduct = async () => {
 
 export const getOrders= async () => {
   try {    
-    const orders = await Order.find();
+    const orders = await Order.find().sort({ createdAt: -1 });
 
     return orders;
+    
+  } catch (err) {
+    console.log(err);
+    throw new Error("找不到訂單");
+  }
+};
+
+export const getOrder= async (id) => {
+  try {    
+    const order = await Order.findById(id);
+
+    return order;
     
   } catch (err) {
     console.log(err);
