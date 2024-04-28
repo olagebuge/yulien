@@ -4,24 +4,24 @@
   gap: 20px;
   width: 600px;
 }
-.container label{
+.container label {
   display: flex;
-  width:90px;
-  gap:20px;
+  width: 90px;
+  gap: 20px;
   align-items: center;
 }
 .container input,
 .container textarea,
 .container select {
   padding: 20px;
-  background-color: #E2D9CB;
+  background-color: #e2d9cb;
   width: 90%;
   border: none;
   border-radius: 5px;
   color: var(--textColor);
   font-size: 16px;
 }
-.container textarea{
+.container textarea {
   width: 100%;
 }
 .container button {
@@ -36,23 +36,23 @@
   font-weight: bold;
 }
 
-.formImages{
+.formImages {
   display: flex;
-  gap:40px;
+  gap: 40px;
 }
 
-.uploadBlock{
+.uploadBlock {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
-.uploadBlock button{
+.uploadBlock button {
   padding: 10px 25px;
 }
 
-.uploadBlock h3{
+.uploadBlock h3 {
   display: flex;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   line-height: 50px;
 }
 
@@ -61,18 +61,29 @@
   font-size: 50px;
   opacity: 0.5;
   padding: 50px;
-  width:240px;
+  width: 240px;
   height: 180px;
   border: 5px solid #fff;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.selectImages{
+.selectImages {
   display: flex;
-  gap:10px;
+  gap: 10px;
   align-items: center;
   flex-wrap: wrap;
-  min-height:80px;
+  min-height: 80px;
 }
 
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0px 30px 60px;
+    
+  }
+  .container>div{
+    width: 90dvw;
+    min-width: 300px;
+  }
+}
