@@ -6,7 +6,6 @@ import NavLink from "../navLink/navLink";
 import styles from "./userAvatar.module.css";
 import { FaXmark, FaEllipsis } from "react-icons/fa6";
 
-
 const links =[{
   title: "關於我們",
   path: "/about",
@@ -44,9 +43,7 @@ const UserAvatar = ({ foundUser }) => {
             <div className={styles.mobileLinks}>
               <FaXmark onClick={() => setOpen(false)} className={styles.xmark}/>
               {links.map((link) => (
-                <div key={link.path}>
-                  <NavLink item={link}/>
-                </div>
+                <NavLink key={link.path} item={link}/>
               ))}
             </div>
             </div>

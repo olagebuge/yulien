@@ -1,5 +1,5 @@
 import Link from "next/link"
-import UserAvatar from "./links/userAvatar/userAvatar";
+import UserAvatar from "@/components/navbar/links/userAvatar/UserAvatar";
 import Links from "./links/Links"
 import styles from "./navbar.module.css"
 import { auth } from "@/lib/auth";
