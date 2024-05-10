@@ -14,7 +14,7 @@ const titleDatas = [
 
 // FETCH DATA WITH AN API
 const getData = async () => {
-  const res = await fetch(`https://yulien.mobuyashea.club/${process.env.PRODUCT_URL}`, {
+  const res = await fetch(`${process.env.PRODUCT_URL}`, {
     next: { revalidate: 3600 },
   });
 
