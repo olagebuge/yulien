@@ -44,7 +44,7 @@ const UserAvatar = ({ foundUser }) => {
             <div className={styles.mobileLinks}>
               <FaXmark onClick={() => setOpen(false)} className={styles.xmark}/>
               {links.map((link) => (
-                <NavLink item={link} key={link.title} />
+                <NavLink key={link.path} item={link}/>
               ))}
             </div>
             </div>
