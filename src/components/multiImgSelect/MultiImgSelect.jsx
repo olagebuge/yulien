@@ -87,8 +87,8 @@ const MultiImgSelect = ({ btnText, desText, media, photos }) => {
       
       <div className={styles.selectImages}>
         {comfirms?.length ? (
-          comfirms.map((i,index) => (
-            <div key={index} className="imageContainer">
+          comfirms.map((i) => (
+            <div key={i} className="imageContainer">
               <Image src={i} fill alt="被選取的圖片" />
               <div
                 className={styles.cancelIcon}

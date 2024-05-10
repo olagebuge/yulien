@@ -4,7 +4,7 @@ import { addProduct, editProduct } from "@/lib/action";
 import styles from "./productForm.module.css";
 import { useFormState } from "react-dom";
 import ImgSelectButton from "../imgSelectButton/ImgSelectButton";
-import MultiImgSelect from "../multiImgSelect/multiImgSelect";
+import MultiImgSelect from "@/components/multiImgSelect/MultiImgSelect";
 import VariableInput from "./variableInput/VariableInput";
 import CateTag from "../cateTag/CateTag";
 import RegexStatus from "../regexStatus/RegexStatus";
