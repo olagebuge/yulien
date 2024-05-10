@@ -1,4 +1,3 @@
-import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
 import { getPosts, getCategory } from "@/lib/data";
 import Image from "next/image";
@@ -25,10 +24,10 @@ export const metadata = {
 
 const BlogPage = async () => {
   // FETCH DATA WITH AN API
-  //const posts = await getData();
+  const posts = await getData();
 
   // FETCH DATA WITHOUT AN API
-  const posts = await getPosts();
+  //const posts = await getPosts();
   const categories = await getCategory();
 
   return (
