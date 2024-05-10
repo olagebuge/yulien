@@ -75,7 +75,7 @@ const BlogPage = async () => {
 
         <Link href="/product/all" className={styles.cateBlock}>
           {titleDatas.map((data) => (
-            <div className={styles.cateItem}>
+            <div className={styles.cateItem} key={data.name}>
               <div className={styles.cateImgContainer}>
                 <Image src={data.imgurl} fill alt="圖示" />
               </div>

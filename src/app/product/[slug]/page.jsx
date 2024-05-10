@@ -47,8 +47,8 @@ const singleProductPage = async ({ params }) => {
 
           <div className={styles.tagPools}>
             {product.categories &&
-              product.categories.map((c) => (
-                <span className={styles.cateTag}>{c}</span>
+              product.categories.map((c,index) => (
+                <span key={c.index} className={styles.cateTag}>{c}</span>
               ))
             }
           </div>

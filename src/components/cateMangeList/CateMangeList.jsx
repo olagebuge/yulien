@@ -36,6 +36,7 @@ const CateMangeList = ({ cate, initialProducts }) => {
           {cate?.length
             ? cate.map((c) => (
                 <div
+                  key={c._id}
                   onClick={() => onSelectCate(c.title)}
                   className={selectCate === c.title ? styles.active : ""}
                 >

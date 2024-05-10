@@ -60,6 +60,7 @@ const MultiImgSelect = ({ btnText, desText, media, photos }) => {
                 {media?.length ? (
                   media.map((m) => (
                     <div
+                      key={m._id}
                       onClick={() => onSelectHandler(m.url)}
                       className={
                         images.includes(m.url) ? styles.checkOutline : ""
@@ -86,8 +87,8 @@ const MultiImgSelect = ({ btnText, desText, media, photos }) => {
       
       <div className={styles.selectImages}>
         {comfirms?.length ? (
-          comfirms.map((i) => (
-            <div className="imageContainer">
+          comfirms.map((i,index) => (
+            <div key={index} className="imageContainer">
               <Image src={i} fill alt="被選取的圖片" />
               <div
                 className={styles.cancelIcon}

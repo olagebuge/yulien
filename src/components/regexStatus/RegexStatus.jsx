@@ -8,7 +8,7 @@ const RegexStatus = ({ title, productSlug }) => {
 
   const handleSlugChange = (e) => {
     const value = e.target.value;
-    const regex = /^[\w]+(\-*[\w]+)+$/i;
+    const regex = /^[\w]+(-*[\w]+)+$/i;
     if (regex.test(value)) {
       setSlug(1);
     } else if (value === "") {

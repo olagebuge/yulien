@@ -37,7 +37,7 @@ const AboutPage = () => {
 
       <div className={styles.boxes}>
       {aboutItems.map((item)=>(
-        <Link className={styles.box} href={item.path}>
+        <Link key={item.path} className={styles.box} href={item.path}>
           <div className={styles.imgContainer}>
             <Image
               src={item.imgurl}

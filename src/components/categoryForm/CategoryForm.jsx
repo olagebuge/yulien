@@ -4,7 +4,7 @@ import { addCategory } from "@/lib/action";
 import { useFormState } from "react-dom";
 import { FaPlus } from "react-icons/fa6";
 import ImgSelectButton from "../imgSelectButton/ImgSelectButton";
-import RegexStatus from "../regexStatus/regexStatus";
+import RegexStatus from "@/components/regexStatus/RegexStatus";
 import styles from "./categoryForm.module.css";
 
 const CategoryForm = async ({ media }) => {

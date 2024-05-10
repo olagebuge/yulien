@@ -59,7 +59,7 @@ const ProfileSubMenu = ({ image }) => {
                 <span>頁面</span>
               </p>
               {links.map((link) => (
-                <Link href={link.path}>{link.title}</Link>
+                <Link href={link.path} key={link.path}>{link.title}</Link>
               ))}
             </div>
             <p className={styles.subTitle}>
