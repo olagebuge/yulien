@@ -1,6 +1,6 @@
 import styles from "./mediaCollection.module.css";
 import { getUserMedias } from "@/lib/data";
-import MediaCard from "./mediaCard/mediaCard";
+import MediaCard from "./mediaCard/MediaCard";
 import { auth } from "@/lib/auth";
 
 
@@ -17,9 +17,9 @@ const MediaCollection = async () => {
             .sort((a, b) => {
               return new Date(b.createdAt) - new Date(a.createdAt);
             })
-            .map((m, index) => (
-              <div key={index}>                
-                <MediaCard url={m.url} alt={m.alt} imageId={m.id}/>               
+            .map((m) => (
+              <div key={m._id}>                
+                <MediaCard url={m.url} alt={m.alt} imageId={m._id}/>               
               </div>
             ))
         ) : (
