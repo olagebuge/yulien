@@ -26,6 +26,9 @@
 .mySwiper{
     width: 600px;
     height: 420px;
+}
+
+.lotusBg{
     background: url('../../../public/lotus-leaf.svg');
     background-repeat: no-repeat;
     background-position: bottom 30px left;
@@ -33,16 +36,17 @@
     padding: 0px 60px;
 }
 
-
 .swiperContainer{    
     position: relative;
-    width: 340px;    
-    height: 340px;
+    width: 380px;    
+    height: 380px;
 }
-.swiperContainer img{
+.swiperContainer .img{
     object-fit: contain;
 }
-
+.swiperContainer.cover .img{
+    object-fit: cover;
+}
 
 @media (max-width:1024px) {
     .mySwiper{
@@ -63,11 +67,11 @@
     }
 }
 
-@media (max-width:768px){
+@media (max-width:767px){
     .mySwiper{
         width: 90dvw;
         max-width: 400px;
-        height: 320px;
+        height: 300px;
         background-size: 150px;
         background-position: bottom 50px left;
     } 

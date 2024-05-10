@@ -14,31 +14,36 @@ const ProductForm = async ({ userId, media, cate, product }) => {
     product ? editProduct : addProduct,
     undefined
   );
- 
+
   return (
     <div>
       <form action={formAction} className={styles.container}>
         <input type="hidden" name="id" value={product && product._id} />
         <input type="hidden" name="userId" value={userId} />
-        <label>
-          商品名稱
+        <div className="rowInput">
+          <label>商品名稱</label>
           <input
             type="text"
             name="title"
             placeholder="請填入商品名稱"
             defaultValue={product && product.title}
           />
-        </label>
-        <label>
-          商品貨號
+        </div>
+        <div className="rowInput">
+          <label>商品貨號</label>
           <input
             type="text"
             name="number"
             placeholder="例:A001"
             defaultValue={product && product.number}
           />
-        </label>
-        <CateTag cate={cate} productCate={(product && product.categories[0] !== "") && product.categories} />
+        </div>
+        <CateTag
+          cate={cate}
+          productCate={
+            product && product.categories[0] !== "" && product.categories
+          }
+        />
         <RegexStatus title={"商品代稱"} productSlug={product && product.slug} />
         <div className={styles.formImages}>
           <div className={styles.uploadBlock}>
@@ -55,7 +60,7 @@ const ProductForm = async ({ userId, media, cate, product }) => {
               btnText={"選擇"}
               desText={"請選擇商品配圖"}
               media={media}
-              photos={(product && product?.photos[0] !== "") && product.photos}
+              photos={product && product?.photos[0] !== "" && product.photos}
             />
           </div>
         </div>

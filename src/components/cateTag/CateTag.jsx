@@ -1,21 +1,15 @@
 "use client";
 
-import CategoryForm from "../categoryForm/CategoryForm";
 import styles from "./cateTag.module.css";
 import { useState } from "react";
-import { FaXmark } from "react-icons/fa6";
+import Link from "next/link";
 
-const CateTag = ({ cate, productCate, media }) => {
-  const [open, setOpen] = useState(false);
+
+const CateTag = ({ cate, productCate }) => {  
   const [categories, setCategories] = useState(productCate || ["未分類"]);
+  
 
-  const onClickAddCate = () => {
-    setOpen(true);
-  };
-  const onCloseAddCate = () => {
-    setOpen(false);
-  };
-
+  
   const onAddCategory = (cateTitle) => {
     if (categories.includes(cateTitle)) {
       // 若該類別已被選中，則從 categories 陣列中移除
@@ -34,7 +28,7 @@ const CateTag = ({ cate, productCate, media }) => {
   };
 
   return (
-    <div style={{display:"flex"}}>
+    <div className="rowInput">
       <label>商品類別</label>
       <input
         type="hidden"
@@ -59,25 +53,13 @@ const CateTag = ({ cate, productCate, media }) => {
         ) : (
           <div className={styles.tips}>
             目前沒有任何類別…
-            <span className={styles.addnow} onClick={onClickAddCate}>
-              快速新增
-            </span>
+            <Link href="/category" className={styles.addnow}>
+              前往新增
+            </Link>
           </div>
         )}
       </div>
-      {open && (
-        <div className="overlay" onClick={onCloseAddCate}>
-          <div
-            className="modal"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <FaXmark onClick={onCloseAddCate} className={styles.xmark}/>
-            <CategoryForm media={media}/>
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 };

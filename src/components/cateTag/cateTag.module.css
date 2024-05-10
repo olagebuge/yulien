@@ -42,4 +42,19 @@
     cursor: pointer; 
   }
 
+  .formContainer{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 80%;
+    max-width: 600px;
+    min-width: 300px;
+    padding-top: 80px;
+    margin: 0 auto;
+  }
+
+  .formContainer h2{
+    margin: 20px 0px;
+  }
+  
   

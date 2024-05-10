@@ -1,38 +1,52 @@
-.container{
-    display: flex;
-    flex-direction: column;
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
-.variSpan{
-    display: inline-block;
-    min-width: 50px;
-    padding: 5px 15px;
-    font-size: 18px;
-    border-radius: 5px;
-    background-color: #fff;
-    color:var(--bg);
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .variSpan.none{
-    opacity: 0.5;
-    cursor: default;
-  }
+.flexBox {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-  .variSpan.active{
-    border: 3px solid rgb(252, 143, 18);
-  }
+.variSpan {
+  display: inline-block;
+  min-width: 50px;
+  padding: 8px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: var(--bg);
+  color: var(--bgDeep);
+  font-weight: 600;
+  cursor: pointer;
+}
 
-  .propBox{
-    display: flex;
-    min-width: 320px;
-    justify-content: space-between;
-    margin-top: 50px;
-   align-items: flex-end;
-  }
+.variSpan.none {
+  opacity: 0.5;
+  cursor: default;
+}
 
-  .price{
-    font-size: 24px;
-    font-weight: 600;
+.variSpan.active {
+  color: #fff;
+  background-color: var(--bgDeep);
+}
+
+.propBox {
+  display: flex;
+  min-width: 320px;
+  justify-content: space-between;
+  margin-top: 50px;
+  align-items: flex-end;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (max-width:767px) {
+  .propBox {
+    width: 100%;
+    min-width: 290px;
   }
+}

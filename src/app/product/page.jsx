@@ -1,5 +1,4 @@
 import { getCategory } from "@/lib/data";
-import CateSideBar from "@/components/cateSideBar/CateSideBar";
 import styles from "./product.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -74,7 +73,7 @@ const BlogPage = async () => {
           </div>
         </div>
 
-        <div className={styles.cateBlock}>
+        <Link href="/product/all" className={styles.cateBlock}>
           {titleDatas.map((data) => (
             <div className={styles.cateItem}>
               <div className={styles.cateImgContainer}>
@@ -84,7 +83,7 @@ const BlogPage = async () => {
               <h3 className={data?.upside ? styles.upside : ""}>{data.name}</h3>
             </div>
           ))}
-        </div>
+        </Link>
       </section>
 
       <section className={styles.deliverBlock}>
@@ -107,7 +106,7 @@ const BlogPage = async () => {
             <li>宅配</li>
             <li>郵局包裹</li>
           </ul>
-          <Link href="#" className={styles.btnBG}>立即選購</Link>
+          <Link href="/product/all" className={styles.btnBG}>立即選購</Link>
         </div>
         </div>
       </section>

@@ -1,19 +1,41 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
-  gap:10px;
+  gap: 10px;
 }
 
-.cancelIcon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 3px 15px;
-    line-height: 25px;
-    border-radius: 25px;
+.cancelIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px 15px;
+  line-height: 25px;
+  border-radius: 25px;
+}
+
+.cancelIcon:hover {
+  background-color: orange;
+  color: var(--bg);
+}
+
+.flexBox {
+  display: flex;
+  gap: 10px;
+}
+
+.rowInput {
+  width: 30%;
+  display: flex;
+}
+
+.rowInput label {
+  width: 40px;
+}
+
+@media (max-width:767px){
+  .rowInput {
+    flex-direction: column;
+    width: 32%;
   }
-  .cancelIcon:hover{
-    background-color: orange;
-    color: var(--bg);
-  }
+}

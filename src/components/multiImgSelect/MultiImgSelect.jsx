@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaXmark } from "react-icons/fa6";
 import styles from "./multiImgSelect.module.css";
 import ImgComponent from "./imgComponent/ImgComponent";
+import Link from "next/link";
 
 const MultiImgSelect = ({ btnText, desText, media, photos }) => {  
 
@@ -68,7 +69,10 @@ const MultiImgSelect = ({ btnText, desText, media, photos }) => {
                     </div>
                   ))
                 ) : (
-                  <p>目前沒有任何媒體</p>
+                  <>
+                  <p>目前沒有任何媒體...</p>
+                  <Link href="/media">前往上傳</Link>
+                  </>
                 )}
               </div>
 

@@ -55,7 +55,7 @@ const AboutPage = () => {
       </div>
 
       <section>
-        <Link href="#" className={`alignButton ${styles.btnBG}`}>
+        <Link href="/contact" className={`alignButton ${styles.btnBG}`}>
           <Image
             src="/ask_icon.svg"
             width={28}

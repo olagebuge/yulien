@@ -47,64 +47,68 @@ const profilePage = async () => {
         <div className={styles.postContainer}>
           <h2>最新訂單</h2>
           目前有{unreadOrders.length}筆新洽詢
-          {unreadOrders.length > 0
-            ? unreadOrders.map((order) => (
-                <Link
-                  key={order._id}
-                  className={styles.orderContainer}
-                  href={`/order/${order._id}`}
-                >
-                  <div className={styles.date}>
-                    <span>{`${new Date(order.createdAt)
-                      .getFullYear()
-                      .toString()}-${
-                      parseInt(new Date(order.createdAt).getMonth()) + 1
-                    }-${new Date(order.createdAt).getDate()}`}</span>
-                    <span>{order.situation}</span>
-                  </div>
-                  <div className={styles.orderName}>
-                    <h3>{order.name}</h3>
-                    <p>{order.phone}</p>
-                    <p>{order.email}</p>
-                  </div>
-                  <p>【{order.question}】</p>
-                  <p className={styles.summary}>
-                    {order.content.slice(0, 12)}...
-                  </p>
-                </Link>
-              ))
-            : ""}
+          <div className={styles.ordersPool}>
+            {unreadOrders.length > 0
+              ? unreadOrders.map((order) => (
+                  <Link
+                    key={order._id}
+                    className={styles.orderContainer}
+                    href={`/order/${order._id}`}
+                  >
+                    <div className={styles.date}>
+                      <span>{`${new Date(order.createdAt)
+                        .getFullYear()
+                        .toString()}-${
+                        parseInt(new Date(order.createdAt).getMonth()) + 1
+                      }-${new Date(order.createdAt).getDate()}`}</span>
+                      <span>{order.situation}</span>
+                    </div>
+                    <div className={styles.orderName}>
+                      <h3>{order.name}</h3>
+                      <p>{order.phone}</p>
+                      <p>{order.email}</p>
+                    </div>
+                    <p>【{order.question}】</p>
+                    <p className={styles.summary}>
+                      {order.content.slice(0, 12)}...
+                    </p>
+                  </Link>
+                ))
+              : ""}
+          </div>
         </div>
         <div className={styles.postContainer}>
           <h2>歷史洽詢</h2>
           目前有{historyOrders.length}筆歷史洽詢
-          {historyOrders.length > 0
-            ? historyOrders.map((order) => (
-                <Link
-                  key={order._id}
-                  className={styles.orderContainer}
-                  href={`/order/${order._id}`}
-                >
-                  <div className={styles.date}>
-                    <span>{`${new Date(order.createdAt)
-                      .getFullYear()
-                      .toString()}-${
-                      parseInt(new Date(order.createdAt).getMonth()) + 1
-                    }-${new Date(order.createdAt).getDate()}`}</span>
-                    <span>{order.situation}</span>
-                  </div>
-                  <div className={styles.orderName}>
-                    <h3>{order.name}</h3>
-                    <p>{order.phone}</p>
-                    <p>{order.email}</p>
-                  </div>
-                  <p>【{order.question}】</p>
-                  <p className={styles.summary}>
-                    {order.content.slice(0, 12)}...
-                  </p>
-                </Link>
-              ))
-            : ""}
+          <div className={styles.ordersPool}>
+            {historyOrders.length > 0
+              ? historyOrders.map((order) => (
+                  <Link
+                    key={order._id}
+                    className={styles.orderContainer}
+                    href={`/order/${order._id}`}
+                  >
+                    <div className={styles.date}>
+                      <span>{`${new Date(order.createdAt)
+                        .getFullYear()
+                        .toString()}-${
+                        parseInt(new Date(order.createdAt).getMonth()) + 1
+                      }-${new Date(order.createdAt).getDate()}`}</span>
+                      <span>{order.situation}</span>
+                    </div>
+                    <div className={styles.orderName}>
+                      <h3>{order.name}</h3>
+                      <p>{order.phone}</p>
+                      <p>{order.email}</p>
+                    </div>
+                    <p>【{order.question}】</p>
+                    <p className={styles.summary}>
+                      {order.content.slice(0, 12)}...
+                    </p>
+                  </Link>
+                ))
+              : ""}
+          </div>
         </div>
       </section>
     </section>

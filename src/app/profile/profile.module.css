@@ -94,7 +94,7 @@
 .orderContainer{
     padding: 15px;
     border: 1px solid var(--textBrown);
-    width: 300px;
+    width: 280px;
 }
 
 .date{
@@ -128,4 +128,11 @@
     flex-direction: column;
     gap:60px;
     width: 100%;
+}
+.ordersPool{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap:20px;
 }

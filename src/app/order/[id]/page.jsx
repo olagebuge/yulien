@@ -1,6 +1,6 @@
 import { getOrder } from "@/lib/data";
 import styles from "./singleOrderPage.module.css";
-import { FaCheck, FaRegEnvelope } from "react-icons/fa6";
+import { FaCheck, FaRegEnvelope, FaRegTrashCan } from "react-icons/fa6";
 import OrderAnnotation from "@/components/orderAnnotation/OrderAnnotation";
 
 const SingleOrderPage = async ({ params }) => {
@@ -11,9 +11,7 @@ const SingleOrderPage = async ({ params }) => {
     order.read = true;
     order.situation = "已讀";
     await order.save();
-  }
-
-  console.log(order)
+  }  
 
   return (
     <section className={`container ${styles.container}`}>
@@ -49,6 +47,12 @@ const SingleOrderPage = async ({ params }) => {
       </div>
 
       <OrderAnnotation id={order._id} annotation={order.annotation}/>
+
+      <form action="" className={styles.remove}>
+        <input type="hidden" name="id" value={order._id} />
+        <span>按下刪除按鈕後，訂單會立即被刪除。</span>
+        <button className={styles.deleteButton}><FaRegTrashCan />刪除</button>
+      </form>
     </section>
   );
 };

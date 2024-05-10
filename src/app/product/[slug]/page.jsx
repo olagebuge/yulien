@@ -29,7 +29,7 @@ const singleProductPage = async ({ params }) => {
           {product.title}
           <span className="tips">貨號{product.number}</span>
         </h1>
-        <SliderShow img={product.img} photos={product.photos} />
+        <SliderShow img={product.img} photos={product.photos} isProduct={true} />
       </div>
       <div className={styles.details}>
         <div className={styles.variables}>
@@ -41,7 +41,7 @@ const singleProductPage = async ({ params }) => {
           {product.desc && (
             <div>
               <h3>敘述</h3>
-              <p>{product.desc}</p>
+              <p className={styles.desc}>{product.desc}</p>
             </div>
           )}
 

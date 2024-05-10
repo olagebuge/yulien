@@ -13,7 +13,11 @@
   gap:20px;
 }
 
-
+.alignTitle{
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
 .h3Title{
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -22,11 +26,7 @@
   font-family: 'Noto Sans TC';
 }
 
-.h3Title2{  
-  padding: 10px 20px;
-  background-color: var(--textBrown);
-  color:#fff;
-  width: 120px;
+.h3Title2{   
   text-align: center;
   border-radius: 5px;
 }

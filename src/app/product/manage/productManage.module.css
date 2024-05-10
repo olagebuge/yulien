@@ -4,7 +4,26 @@
   justify-content: flex-start;
   min-height: calc(100dvh - 220px);
   gap: 30px;
-  padding: 80px 30px 100px;
+  padding: 100px 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.h1Title{
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.mediaHelp{
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .post {
@@ -28,6 +47,20 @@
   font-weight: 400;
   color:gray;
   cursor: pointer;
+}
+
+.addButton{
+  font-size: 18px;
+  font-family: 'Noto Sans TC';
+  font-weight: 600;
+  letter-spacing: 1px;
+  border:2px solid rgb(105, 84, 73);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.addButton:hover{
+  background-color: rgb(105, 84, 73);
+  color: #fff;
 }
 
 @media screen and (max-width: 1280px) {

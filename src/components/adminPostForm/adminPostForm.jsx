@@ -1,14 +1,17 @@
 "use client";
 
-import { addPost } from "@/lib/action";
+import { addPost, editPost } from "@/lib/action";
 import styles from "./adminPostForm.module.css";
 import { useFormState } from "react-dom";
 import ImgSelectButton from "../imgSelectButton/ImgSelectButton";
 import RegexStatus from "../regexStatus/RegexStatus";
 import CateTag from "../cateTag/CateTag";
 
-const AdminPostForm = async ({ userId, media, cate, post }) => {
-  const [state, formAction] = useFormState(addPost, undefined);
+const AdminPostForm = async ({ userId, media, cate, post }) => {  
+  const [state, formAction] = useFormState(
+    post ? editPost : addPost,
+    undefined
+  );
 
   return (
     <div>
@@ -28,7 +31,7 @@ const AdminPostForm = async ({ userId, media, cate, post }) => {
         <label>文章標題</label>
           <input type="text" name="title" placeholder="請輸入文章標題" defaultValue={post && post.title}/>
         </div>
-        <CateTag cate={cate} productCate={(post && post.categories[0] !== "") && post.categories} media={media}/>
+        <CateTag cate={cate} productCate={(post && post.categories[0] !== "") && post.categories}/>
         <RegexStatus title={"文章代稱"} productSlug={post && post.slug}/>
         <h3>文章內容</h3>
         <textarea type="text" name="desc" placeholder="請輸入文章內容" rows={10} defaultValue={post && post?.desc}/>

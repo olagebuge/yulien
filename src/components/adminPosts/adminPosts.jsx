@@ -2,7 +2,6 @@ import { getPosts } from "@/lib/data";
 import styles from "./adminPosts.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { deletePost } from "@/lib/action";
 
 const AdminPosts = async () => {
   const posts = await getPosts();
@@ -24,13 +23,10 @@ const AdminPosts = async () => {
             </div>
             <div>
             <span className={styles.date}>{`${new Date(post.createdAt).getFullYear()}-${new Date(post.createdAt).getMonth()+1}-${new Date(post.createdAt).getDate()}`}</span>
-            <Link className={styles.postButton} href={`/blog/${post.slug}`}>編輯</Link>
+            <Link className={styles.postButton} href={`/blog/${post.slug}/edit`}>編輯</Link>
             </div>
           </div>
-          {/* <form action={deletePost}>
-            <input type="hidden" name="id" value={post.id} />
-            <button className={styles.postButton}>移除</button>
-          </form> */}
+          
           
         </div>
       ))}

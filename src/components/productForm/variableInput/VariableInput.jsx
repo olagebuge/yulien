@@ -4,11 +4,13 @@ import { useState } from "react";
 import styles from "./variableInput.module.css";
 import { FaPlus, FaTrashCan } from "react-icons/fa6";
 
-const VariableInput = ({productVariables}) => {  
-  const [variables, setVariables] = useState(productVariables || [{ key: "", price: "",stocks:"" }]);
+const VariableInput = ({ productVariables }) => {
+  const [variables, setVariables] = useState(
+    productVariables || [{ key: "", price: "", stocks: "" }]
+  );
 
   const addVariableHandler = async () => {
-    setVariables([...variables, { key: "", price: "",stocks:"" }]);
+    setVariables([...variables, { key: "", price: "", stocks: "" }]);
   };
 
   // 更新特定規格與價錢的值
@@ -35,9 +37,9 @@ const VariableInput = ({productVariables}) => {
         readOnly
       />
       {variables.map((variable, index) => (
-        <div key={index} className="flexBox">
-          <label>
-            規格
+        <div key={index} className={styles.flexBox}>
+          <div className={styles.rowInput}>
+            <label>規格</label>
             <input
               type="text"
               name="key"
@@ -45,9 +47,9 @@ const VariableInput = ({productVariables}) => {
               onChange={(e) => handleChange(index, e)}
               placeholder="例如:一斤"
             />
-          </label>
-          <label>
-            價錢
+          </div>
+          <div className={styles.rowInput}>
+            <label>價錢</label>
             <input
               type="text"
               name="price"
@@ -55,9 +57,9 @@ const VariableInput = ({productVariables}) => {
               onChange={(e) => handleChange(index, e)}
               placeholder="例如:300"
             />
-          </label>
-          <label>
-            庫存
+          </div>
+          <div className={styles.rowInput}>
+            <label>庫存</label>
             <input
               type="text"
               name="stocks"
@@ -65,7 +67,7 @@ const VariableInput = ({productVariables}) => {
               onChange={(e) => handleChange(index, e)}
               placeholder="例如:10"
             />
-          </label>
+          </div>
           {/* 刪除規格與價錢的按鈕 */}
           <div
             className={styles.cancelIcon}

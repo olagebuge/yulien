@@ -37,3 +37,31 @@
     gap:10px;
     color:var(--textBrown)
 }
+
+.remove{
+    display: flex;
+    gap:10px;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid var(--textBrown);
+    padding: 60px;
+    width: 100%;
+}
+.deleteButton{    
+    color: brown;
+    background-color: var(--bg);
+    padding: 8px 15px;
+    text-align: center;
+    border: 1px solid brown;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.deleteButton:hover{
+    color: #fff;
+    background-color: brown;
+}

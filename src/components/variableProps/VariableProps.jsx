@@ -15,7 +15,7 @@ const VariableProps = ({ product }) => {
 
   return (
     <div className={styles.container}>
-      <div className="flexBox">
+      <div className={styles.flexBox}>
         {product?.variables &&
           product.variables.map((item, index) => (
             <span
@@ -34,7 +34,7 @@ const VariableProps = ({ product }) => {
         <span className={styles.stocks}>{showProps.stocks != (0 || null) ? <span>庫存 {showProps.stocks}</span>: "無庫存" }</span>
       </div>
 
-      <AddToCart stocks={showProps.stocks}/>
+      {/* 先隱藏 <AddToCart stocks={showProps.stocks}/> */}
     </div>
   );
 };

@@ -4,6 +4,7 @@ import styles from "./cateSideBar.module.css";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaTag } from "react-icons/fa6";
 
 const CateSideBar = ({ cate, initialProducts }) => {
   const [selectCate, setSelectCate] = useState(null);
@@ -52,8 +53,15 @@ const CateSideBar = ({ cate, initialProducts }) => {
         </div>
       </div>
 
-      <section className = {styles.container2}>        
-        {selectCate ? <h3 className={styles.h3Title2}>{selectCate}</h3> : <h3 className={styles.h3Title2}>全部</h3>}
+      <section className={styles.container2}>
+        <div className={styles.alignTitle}>
+          <FaTag />
+          {selectCate ? (
+            <h3 className={styles.h3Title2}>{selectCate}</h3>
+          ) : (
+            <h3 className={styles.h3Title2}>全部</h3>
+          )}
+        </div>
         <div className={styles.productBlock}>
           {products.map((product) => (
             <Link
@@ -70,7 +78,6 @@ const CateSideBar = ({ cate, initialProducts }) => {
           ))}
         </div>
       </section>
-
     </div>
   );
 };

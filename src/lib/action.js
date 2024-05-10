@@ -8,7 +8,6 @@ import bcrypt from "bcryptjs";
 import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 
-
 export const addPost = async (prevState, formData) => {
   // const title = formData.get("title");
   // const desc = formData.get("desc");
@@ -40,6 +39,40 @@ export const addPost = async (prevState, formData) => {
   }
   redirect("/blog");
 };
+
+export const editPost = async (prevState, formData) => {
+  const {
+    id,
+    title,      
+    img,
+    desc,
+    slug,    
+    categories
+  } = Object.fromEntries(formData);
+
+  try {
+    connectToDb();   
+    const parsedCategories = categories.split(","); 
+
+    await Post.findByIdAndUpdate(id, {
+      title, 
+      img,
+      desc,      
+      slug,      
+      categories: parsedCategories,
+    });
+
+    revalidatePath("/managepost");
+    revalidatePath("/blog");
+    revalidatePath(`/blog/${slug}`);
+    revalidatePath(`/blog/${slug}/edit`);
+  } catch (err) {
+    console.log(err);
+    return { error: "儲存修改商品內容時發生錯誤!" };
+  }
+  redirect("/managepost");
+};
+
 
 export const deletePost = async (formData) => {
   const { id } = Object.fromEntries(formData);
@@ -362,8 +395,8 @@ export const editProduct = async (prevState, formData) => {
     });
     revalidatePath("/product/manage");
     revalidatePath("/product");
-    revalidatePath("/product/[slug]");
-    revalidatePath("/product/[slug]/edit");
+    revalidatePath(`/product/${slug}`);
+    revalidatePath(`/product/${slug}/edit`);
   } catch (err) {
     console.log(err);
     return { error: "儲存修改商品內容時發生錯誤!" };
