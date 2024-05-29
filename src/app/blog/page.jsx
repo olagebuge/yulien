@@ -1,5 +1,5 @@
 import styles from "./blog.module.css";
-import { getPosts, getCategory } from "@/lib/data";
+import { getCategory } from "@/lib/data";
 import Image from "next/image";
 import PostSideBar from "@/components/postSideBar/PostSideBar";
 

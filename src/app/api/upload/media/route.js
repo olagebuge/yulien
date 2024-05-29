@@ -2,11 +2,9 @@ import { NextResponse, revalidatePath } from "next/server";
 import fs from "fs/promises";
 import { connectToDb } from "@/lib/utils";
 import { Media } from "@/lib/models";
-import { auth } from "@/lib/auth";
 
 
-
-export const GET = async (request) => {  
+export const GET = async () => {  
   try {
     connectToDb();
     const medias = await Media.find();
